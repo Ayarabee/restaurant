@@ -4,11 +4,9 @@ import 'package:restaurant/core/core_widgets/default_buttons/default_button_mana
 import 'package:restaurant/core/core_widgets/default_buttons/default_empty_button.dart';
 import 'package:restaurant/core/core_widgets/default_buttons/default_filled_button.dart';
 import 'package:restaurant/core/core_widgets/nav_bar/default_nav_bar.dart';
-import 'package:restaurant/core/core_widgets/nav_bar/default_nav_bar.dart';
 import 'package:restaurant/core/resources_manager/colors_manager.dart';
 import 'package:restaurant/core/resources_manager/size_manager.dart';
 import 'package:restaurant/core/resources_manager/style_manager.dart';
-
 
 class DefaultBody extends StatelessWidget {
   const DefaultBody({
@@ -19,81 +17,75 @@ class DefaultBody extends StatelessWidget {
     this.sideBarFilledButton,
     this.sideBarEmptyButton,
     this.titleDivider = true,
+    this.sideBarTitleToDivider = SizeManager.sideBarTitleToDivider,
   });
 
   final Widget? sideBarBody;
   final String? title;
   final bool titleDivider;
   final Widget body;
+  final double sideBarTitleToDivider;
   final DefaultButtonManager? sideBarFilledButton; // filled primary
   final DefaultButtonManager? sideBarEmptyButton; // filled white
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children:
-      [
+      children: [
         // side bar
         Expanded(
           flex: 2,
           child: Container(
             padding: PaddingManager.sideBar,
-           // width: MediaQuery.of(context).size.width*0.271,
+            // width: MediaQuery.of(context).size.width*0.271,
             //height: double.infinity,
             decoration: BoxDecoration(
-              color: ColorsManager.secondary,
-              borderRadius: BorderManager.sideBar
-            ),
+                color: ColorsManager.secondary,
+                borderRadius: BorderManager.sideBar),
             child: Column(
-              children:
-              [
-                if(title != null)
+              children: [
+                if (title != null)
+                  Column(
+                    children: [
+                      Text(
+                        title!,
+                        style: StyleManager.textStyle36,
+                        textAlign: TextAlign.center,
+                      ),
+                      if (titleDivider)
+                        Column(
+                          children: [
+                            SizedBox(
+                              height: sideBarTitleToDivider,
+                            ),
+                            const DefaultDivider()
+                          ],
+                        ),
+                    ],
+                  ),
+                if (sideBarBody == null) const Spacer(),
+                if (sideBarBody != null) Expanded(child: sideBarBody!),
                 Column(
                   children: [
-                    Text(
-                      title!,
-                      style: StyleManager.textStyle36,
-                      textAlign: TextAlign.center,
-                    ),
-                    if(titleDivider)
-                    const Column(
-                      children: [
-                        SizedBox(height: SizeManager.sideBarTitleToDivider,),
-                        DefaultDivider()
-                      ],
-                    ),
-                  ],
-                ),
-
-                if(sideBarBody != null)
-                  Expanded(child: sideBarBody!),
-
-                Column(
-                  children:
-                  [
-                    if(sideBarEmptyButton == null && sideBarFilledButton != null )
+                    if (sideBarEmptyButton == null &&
+                        sideBarFilledButton != null)
                       const DefaultDivider(),
-
-                    if(sideBarFilledButton != null)
+                    if (sideBarFilledButton != null)
                       DefaultFilledButton(
-                        onPressed: sideBarFilledButton!.onTab,
-                        text: sideBarFilledButton!.text
-                      ),
-
-                    if(sideBarFilledButton != null && sideBarEmptyButton !=null)
+                          onPressed: sideBarFilledButton!.onTab,
+                          text: sideBarFilledButton!.text),
+                    if (sideBarFilledButton != null &&
+                        sideBarEmptyButton != null)
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 20.0),
                         child: DefaultDivider(),
                       ),
-
-                    if(sideBarEmptyButton != null)
+                    if (sideBarEmptyButton != null)
                       DefaultEmptyButton(
                           onPressed: sideBarEmptyButton!.onTab,
-                          text: sideBarEmptyButton!.text
-                      ),
+                          text: sideBarEmptyButton!.text),
                   ],
                 )
-
               ],
             ),
           ),
@@ -105,10 +97,9 @@ class DefaultBody extends StatelessWidget {
           child: Container(
             color: ColorsManager.white,
             child: Column(
-              children:
-              [
+              children: [
                 Expanded(
-                    child: body,
+                  child: body,
                 ),
                 const DefaultNavBar()
               ],

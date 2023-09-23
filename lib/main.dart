@@ -12,4 +12,3 @@ void main() async{
   await AppLocalization.setLanguage();
   runApp(MyApp());
 }
-
