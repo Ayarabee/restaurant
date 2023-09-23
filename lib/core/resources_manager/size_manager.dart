@@ -25,7 +25,9 @@ abstract class PaddingManager
 
   static const EdgeInsetsGeometry divider = EdgeInsets.symmetric(horizontal: 25);
   static const EdgeInsetsGeometry fromFieldMargin = EdgeInsets.all(20.0);
+  static const EdgeInsetsGeometry bodyPadding = EdgeInsets.symmetric(horizontal: 15.0,vertical: 20,);
+  static const EdgeInsetsGeometry itemDetailsPadding = EdgeInsets.symmetric(horizontal: 13.0,vertical: 10,);
   static const EdgeInsetsGeometry fromFieldPadding = EdgeInsets.symmetric(horizontal: 23,vertical: 28);
-  static const EdgeInsetsGeometry sideBar = EdgeInsets.symmetric(horizontal: 20, vertical: 40);
+  static const EdgeInsetsGeometry sideBar = EdgeInsets.symmetric(horizontal: 15, vertical: 20);
 }
 

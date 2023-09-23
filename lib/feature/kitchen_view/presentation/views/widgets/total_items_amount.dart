@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant/core/core_widgets/default_buttons/no_hover_button.dart';
 import 'package:restaurant/core/resources_manager/colors_manager.dart';
-import 'package:restaurant/core/resources_manager/size_manager.dart';
 import 'package:restaurant/core/resources_manager/style_manager.dart';
+import 'shared_container.dart';
 import 'shared_order_row.dart';
 import 'total_orders_drop_down.dart';
 
@@ -11,44 +10,33 @@ class TotalItemsAmount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      padding: const EdgeInsets.all(20),
-      decoration:   BoxDecoration(
-        color: ColorsManager.secondary,
-        borderRadius:const BorderRadius.only(
-          topLeft: Radius.circular(15),
-          bottomLeft: Radius.circular(15),
+    List<Map<String,dynamic>>ordersList=[
+      {
+        "text":"حواوشي",
+        "num":"18",
+      },
+      {
+        "text":"سجق ليمون",
+        "num":"4",
+      },
+      {
+        "text":"بطاطس مقلية",
+        "num":"16",
+      },
+    ];
+    return ListView(
+      children: [
+        const SizedBox(height: 40,),
+        const SharedContainer(text: "كميات الاصناف"),
+        const SizedBox(height: 25,),
+        const TotalOrdersDropDown(),
+        const SizedBox(height: 10,),
+        for(int i=0;i<ordersList.length;i++)
+         Padding(
+          padding: EdgeInsets.only(bottom:i< ordersList.length-1?10.0:0),
+          child: SharedOrderRow(text: ordersList[i]['text'],num:  ordersList[i]['num'],),
         ),
-        border: Border.all(
-          color: ColorsManager.black,
-             width: .2,
-        )
-        // border: Border(left: BorderSide(
-        //   color: ColorsManager.black,
-        //   width: 1,
-        // )),
-      ),
-      child: ListView(
-        children: [
-          Text(
-            "إجمالي  الطلبات: 4",
-            style: StyleManager.textStyle36.copyWith(fontSize: 30),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          NoHoverButton(onPressed: (){}, text: "كميات الاصناف"),
-          const SizedBox(height: 25,),
-          const TotalOrdersDropDown(),
-          const SizedBox(height: 10,),
-          const SharedOrderRow(text: "حواوشي",num: "18",),
-          const SizedBox(height: 10,),
-          const SharedOrderRow(text: "سجق ليمون",num: "4",),
-          const SizedBox(height: 10,),
-          const SharedOrderRow(text: "بطاطس مقلية",num: "16",),
-        ],
-      ),
+      ],
     );
   }
 }
