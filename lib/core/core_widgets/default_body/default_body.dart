@@ -18,10 +18,12 @@ class DefaultBody extends StatelessWidget {
     required this.body,
     this.sideBarFilledButton,
     this.sideBarEmptyButton,
+    this.titleDivider = true,
   });
 
   final Widget? sideBarBody;
   final String? title;
+  final bool titleDivider;
   final Widget body;
   final DefaultButtonManager? sideBarFilledButton; // filled primary
   final DefaultButtonManager? sideBarEmptyButton; // filled white
@@ -32,66 +34,74 @@ class DefaultBody extends StatelessWidget {
       children:
       [
         // side bar
-        Container(
-          padding: PaddingManager.sideBar,
-          width: MediaQuery.of(context).size.width*0.271,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: ColorsManager.secondary,
-            borderRadius: BorderManager.sideBar
-          ),
-          child: Column(
-            children:
-            [
-              if(title != null)
-              Column(
-                children: [
-                  Text(
-                    title!,
-                    style: StyleManager.textStyle36,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: SizeManager.sideBarTitleToDivider,),
-                  const DefaultDivider()
-                ],
-              ),
-
-              if(sideBarBody != null)
-                sideBarBody!,
-
-              const Spacer(),
-              Column(
-                children:
-                [
-                  if(sideBarEmptyButton == null)
-                    const DefaultDivider(),
-
-                  if(sideBarFilledButton != null)
-                    DefaultFilledButton(
-                      onPressed: sideBarFilledButton!.onTab,
-                      text: sideBarFilledButton!.text
+        Expanded(
+          flex: 2,
+          child: Container(
+            padding: PaddingManager.sideBar,
+           // width: MediaQuery.of(context).size.width*0.271,
+            //height: double.infinity,
+            decoration: BoxDecoration(
+              color: ColorsManager.secondary,
+              borderRadius: BorderManager.sideBar
+            ),
+            child: Column(
+              children:
+              [
+                if(title != null)
+                Column(
+                  children: [
+                    Text(
+                      title!,
+                      style: StyleManager.textStyle36,
+                      textAlign: TextAlign.center,
                     ),
-
-                  if(sideBarFilledButton != null && sideBarEmptyButton !=null)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20.0),
-                      child: const DefaultDivider(),
+                    if(titleDivider)
+                    const Column(
+                      children: [
+                        SizedBox(height: SizeManager.sideBarTitleToDivider,),
+                        DefaultDivider()
+                      ],
                     ),
+                  ],
+                ),
 
-                  if(sideBarEmptyButton != null)
-                    DefaultEmptyButton(
-                        onPressed: sideBarEmptyButton!.onTab,
-                        text: sideBarEmptyButton!.text
-                    ),
-                ],
-              )
+                if(sideBarBody != null)
+                  Expanded(child: sideBarBody!),
 
-            ],
+                Column(
+                  children:
+                  [
+                    if(sideBarEmptyButton == null && sideBarFilledButton != null )
+                      const DefaultDivider(),
+
+                    if(sideBarFilledButton != null)
+                      DefaultFilledButton(
+                        onPressed: sideBarFilledButton!.onTab,
+                        text: sideBarFilledButton!.text
+                      ),
+
+                    if(sideBarFilledButton != null && sideBarEmptyButton !=null)
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20.0),
+                        child: DefaultDivider(),
+                      ),
+
+                    if(sideBarEmptyButton != null)
+                      DefaultEmptyButton(
+                          onPressed: sideBarEmptyButton!.onTab,
+                          text: sideBarEmptyButton!.text
+                      ),
+                  ],
+                )
+
+              ],
+            ),
           ),
         ),
 
         // body
         Expanded(
+          flex: 6,
           child: Container(
             color: ColorsManager.white,
             child: Column(

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant/core/core_widgets/default_body/default_body.dart';
 import 'package:restaurant/core/resources_manager/colors_manager.dart';
 import 'package:restaurant/core/resources_manager/size_manager.dart';
 
 import 'total_items_amount.dart';
 import 'total_items_details.dart';
 
-class TotalOrdersViewBody extends StatelessWidget {
-  const TotalOrdersViewBody({super.key});
+class KitchenViewBody extends StatelessWidget {
+  const KitchenViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +19,18 @@ class TotalOrdersViewBody extends StatelessWidget {
             color: ColorsManager.primary,
             width: 5,
           )),
-      child: const Row(
-        children: [
-          TotalItemsAmount(),
-          Expanded(child: TotalItemsDetails()),
-        ],
-      ),
+      child: const DefaultBody(
+        titleDivider: false,
+        title: "إجمالي  الطلبات: 4",
+        sideBarBody: TotalItemsAmount(),
+          body: TotalItemsDetails()
+      )
+      // const Row(
+      //   children: [
+      //     TotalItemsAmount(),
+      //     Expanded(child: TotalItemsDetails()),
+      //   ],
+      // ),
     );
   }
 }

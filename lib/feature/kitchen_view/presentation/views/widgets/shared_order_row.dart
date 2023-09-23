@@ -19,6 +19,7 @@ final bool? isGrey;
             fontWeight: FontWeight.bold,
           ):StyleManager.textStyleDark24.copyWith(
             fontWeight: FontWeight.bold,
+            fontSize: 18,
           ),
         ),
         const Spacer(),
@@ -29,6 +30,7 @@ final bool? isGrey;
             fontWeight: FontWeight.bold,
           ):StyleManager.textStyleDark24.copyWith(
             fontWeight: FontWeight.bold,
+            fontSize: 18,
           ),
         ),
       ],
