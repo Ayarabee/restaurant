@@ -5,7 +5,8 @@ import 'package:restaurant/core/localization/app_localization.dart';
 import 'package:restaurant/core/resources_manager/constants_manager.dart';
 class MyApp extends StatelessWidget {
   const MyApp._internal();
-
+// kitchen
+  //kitchen 2
   static const MyApp _instance = MyApp._internal(); // singleton
   factory MyApp() => _instance; // factory
 
