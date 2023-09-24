@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant/core/core_widgets/default_body/default_body.dart';
 
-class NewOrderView extends StatelessWidget {
-  const NewOrderView({super.key});
+class CashierView extends StatelessWidget {
+  const CashierView({super.key});
 
   @override
   Widget build(BuildContext context) {
