@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant/core/core_widgets/default_form/default_form_field.dart';
 import 'package:restaurant/core/resources_manager/size_manager.dart';
 
+import '../../resources_manager/style_manager.dart';
 import 'default_label.dart';
 
 class DefaultForm extends StatelessWidget {
@@ -18,6 +19,7 @@ class DefaultForm extends StatelessWidget {
     this.maxLines = 1,
     this.suffixPadding = 5.0,
     this.hintText,
+    this.labelStyle=StyleManager.textStyleDark24,
   });
 
   final int maxLines;
@@ -31,6 +33,7 @@ class DefaultForm extends StatelessWidget {
   final String text;
   final double suffixPadding;
   final String? hintText;
+ final TextStyle labelStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +41,14 @@ class DefaultForm extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children:
       [
-        DefaultLabel(text: text),
-        const SizedBox(height: SizeManager.labelFormDivider,),
+        DefaultLabel(
+            text: text,
+          style: labelStyle,
+
+        ),
+        const SizedBox(
+          height: SizeManager.labelFormDivider,
+        ),
         DefaultFormField(
           hintText: hintText,
           suffixPadding: suffixPadding,
