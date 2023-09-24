@@ -19,8 +19,7 @@ class _DefaultNavBarListState extends State<DefaultNavBarList> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        for(int i=0;i<NavBarData.listOfIcons.length;i++)
-          buildListItem(i)
+        for (int i = 0; i < NavBarData.listOfIcons.length; i++) buildListItem(i)
       ],
     );
   }
@@ -28,32 +27,40 @@ class _DefaultNavBarListState extends State<DefaultNavBarList> {
   Widget buildListItem(int i) {
     return Expanded(
       child: InkWell(
-            onTap: () {
-              setState(() {
-                currentIndex = i;
-              });
-            },
-            child: Column(
-              children: [
-                SvgPicture.asset(
-                  NavBarData.listOfIcons[i],
-                  width: 26,
-                  height: 28,
-                  color: i == currentIndex
-                      ? ColorsManager.primary
-                      : ColorsManager.black,
-                ),
-                const SizedBox(height: 17,),
-                Text(
-                  NavBarData.listOfStrings[i],
-                  style:  i==currentIndex?StyleManager.textStyleDark18.copyWith(
-                      color: ColorsManager.primary
-                  ):StyleManager.textStyleDark18,
-                  textAlign: TextAlign.center,
-                ),
-              ],
+        onTap: () {
+          setState(() {
+            currentIndex = i;
+          });
+        },
+        child: Column(
+          children: [
+            SvgPicture.asset(
+              NavBarData.listOfIcons[i],
+              width: 20,
+              height: 22,
+              color: i == currentIndex
+                  ? ColorsManager.primary
+                  : ColorsManager.black,
             ),
-          ),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              NavBarData.listOfStrings[i],
+              style: i == currentIndex
+                  ? StyleManager.textStyle14.copyWith(
+                      color: ColorsManager.primary,
+                      fontWeight: FontWeight.w400,
+                    )
+                  : StyleManager.textStyle14.copyWith(
+                      color: ColorsManager.black,
+                      fontWeight: FontWeight.w400,
+                    ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
