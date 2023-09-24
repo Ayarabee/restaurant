@@ -7,7 +7,6 @@ import 'package:restaurant/core/resources_manager/constants_manager.dart';
 class MyApp extends StatelessWidget {
 
 
-  //named constructor
   const MyApp._internal();
 
   static const MyApp _instance = MyApp._internal(); // singleton
