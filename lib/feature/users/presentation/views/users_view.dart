@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 
-class UsersListView extends StatelessWidget {
-  const UsersListView({super.key});
+class UsersView extends StatelessWidget {
+  const UsersView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -18,22 +18,21 @@ class DefaultEmptyButton extends StatefulWidget {
 }
 
 class _DefaultEmptyButtonState extends State<DefaultEmptyButton> {
-  bool tapped=false;
+  bool tapped = false;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70,
+      height: SizeManager.s40,
       width: double.infinity,
       child: MouseRegion(
-        onHover: (mouse)
-        {
+        onHover: (mouse) {
           setState(() {
-            tapped=true;
+            tapped = false;
           });
         },
-        onExit: (exit){
+        onExit: (exit) {
           setState(() {
-            tapped=false;
+            tapped = false;
           });
         },
         child: MaterialButton(
@@ -41,16 +40,15 @@ class _DefaultEmptyButtonState extends State<DefaultEmptyButton> {
           color: ColorsManager.white,
           hoverColor: ColorsManager.primary,
           shape: OutlineInputBorder(
-              borderRadius: BorderManager.radius15,
-              borderSide: const BorderSide(
-                  color: ColorsManager.primary
-              )
-          ),
+              borderRadius: BorderManager.radius5,
+              borderSide: const BorderSide(color: ColorsManager.primary)),
           child: Text(
             widget.text,
-            style: tapped?StyleManager.textStyleDark30.copyWith(
-              color: ColorsManager.white,
-            ):StyleManager.textStyleDark30,
+            style: tapped
+                ? StyleManager.textStyleDark24.copyWith(
+                    color: ColorsManager.white,
+                  )
+                : StyleManager.textStyleDark24,
           ),
         ),
       ),

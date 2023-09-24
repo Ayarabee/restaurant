@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant/core/resources_manager/colors_manager.dart';
-import 'package:restaurant/core/resources_manager/style_manager.dart';
 import 'shared_container.dart';
 import 'shared_order_row.dart';
 import 'total_orders_drop_down.dart';

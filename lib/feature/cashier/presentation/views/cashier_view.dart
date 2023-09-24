@@ -7,7 +7,7 @@ class CashierView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: DefaultBody(
         title: 'Cashier',
         body: Column(
