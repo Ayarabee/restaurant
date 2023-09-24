@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: Locale(CacheData.lang!),
       translations: AppLocalization(),
-      home: const AddUserView(),
+
     );
   }
 }
