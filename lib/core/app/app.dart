@@ -4,7 +4,6 @@ import 'package:restaurant/core/local_database/cache_data.dart';
 import 'package:restaurant/core/localization/app_localization.dart';
 import 'package:restaurant/core/resources_manager/constants_manager.dart';
 
-import '../../feature/users/presentation/views/add_user_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp._internal();
@@ -26,5 +25,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-//edit
-//ra
+
