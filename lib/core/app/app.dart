@@ -6,11 +6,9 @@ import 'package:restaurant/core/resources_manager/constants_manager.dart';
 
 import '../../feature/users/presentation/views/add_user_view.dart';
 
-// saber
 class MyApp extends StatelessWidget {
   const MyApp._internal();
-//kitchen
-//kitchen 2
+
   static const MyApp _instance = MyApp._internal(); // singleton
   factory MyApp() => _instance; // factory
 
