@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant/core/core_widgets/default_body/default_body.dart';
-import 'package:restaurant/core/core_widgets/image_widget/edit_image.dart';
 import 'package:restaurant/core/resources_manager/assets_manager.dart';
 import 'package:restaurant/feature/items/data/item_model.dart';
 import 'package:restaurant/feature/items/presentation/views/widgets/add_item/main_colum_item_body.dart';
@@ -17,8 +16,8 @@ class EditItemView extends StatelessWidget {
       body: DefaultBody(
         title: "تعديل",
          sideBarTitleToDivider:30,
-        sideBarBody:   ImageView(
-            image: AssetsManager.photo,
+        sideBarBody: ImageView(
+            image: AssetsManager.deleteMe,
           onPressed: () {  },
          ),
         sideBarEmptyButton: DefaultButtonManager(

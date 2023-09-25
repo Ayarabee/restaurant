@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant/core/core_widgets/default_form/default_form_field.dart';
+import 'package:restaurant/core/core_widgets/default_form/default_form_field2.dart';
 import 'package:restaurant/core/resources_manager/size_manager.dart';
 
 import 'default_label.dart';
 
-class DefaultForm extends StatelessWidget {
-  const DefaultForm({
+class DefaultForm2 extends StatelessWidget {
+  const DefaultForm2({
     super.key,
     required this.text,
     this.enabled = true,
@@ -45,7 +46,7 @@ class DefaultForm extends StatelessWidget {
         const SizedBox(
           height: SizeManager.labelFormDivider,
         ),
-        DefaultFormField(
+        DefaultFormField2(
           hintText: hintText,
           suffixPadding: suffixPadding,
           controller: controller,

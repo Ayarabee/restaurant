@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 import 'package:restaurant/core/local_database/cache_data.dart';
 import 'package:restaurant/core/localization/app_localization.dart';
 import 'package:restaurant/core/resources_manager/constants_manager.dart';
-import 'package:restaurant/feature/cashier/presentation/views/cashier_view.dart';
-import 'package:restaurant/feature/items/data/item_model.dart';
 import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
-import 'package:restaurant/feature/items/presentation/views/add_item_view.dart';
 
+import '../../feature/items/data/item_model.dart';
+import '../../feature/items/presentation/views/add_item_view.dart';
+import '../../feature/items/presentation/views/add_quantity_view.dart';
 import '../../feature/items/presentation/views/edit_item_view.dart';
 // saber
 class MyApp extends StatelessWidget {
@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
         translations: AppLocalization(),
         //home: AddItemView(),
         //home: EditItemView(itemModel: ItemModel()),
+        home: const AddQuantityView(),
       )
     );
   }

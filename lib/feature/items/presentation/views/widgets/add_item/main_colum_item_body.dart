@@ -31,7 +31,10 @@ class _MainColumItemBodyState extends State<MainColumItemBody> {
    @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 140.0),
+      padding: const EdgeInsets.symmetric(
+          horizontal: 140.0,
+        vertical: 20,
+      ),
       child: BlocConsumer<ItemCubit, ItemState>(
         listener: (context, state){},
         builder: (context, state)
