@@ -19,8 +19,7 @@ class DefaultForm extends StatelessWidget {
     this.maxLines = 1,
     this.suffixPadding = 5.0,
     this.hintText,
-    this.labelStyle=StyleManager.textStyleDark24,
-  });
+   });
 
   final int maxLines;
   final bool enabled;
@@ -33,7 +32,6 @@ class DefaultForm extends StatelessWidget {
   final String text;
   final double suffixPadding;
   final String? hintText;
- final TextStyle labelStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +41,6 @@ class DefaultForm extends StatelessWidget {
       [
         DefaultLabel(
             text: text,
-          style: labelStyle,
 
         ),
         const SizedBox(

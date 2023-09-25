@@ -10,6 +10,7 @@ class AssetsManager
   static const String timer = '${_imagePath}timer.svg';
   static const String user = '${_imagePath}user.svg';
   static const String addPhoto = '${_imagePath}add_photo.svg';
+  static const String photo = '${_imagePath}Rectangle 69.svg';
   static const String stores = '${_imagePath}stores.svg';
   static const String search = '${_imagePath}search.svg';
   static const String orangeRectangle = '${_imagePath}orange_rect.svg';
