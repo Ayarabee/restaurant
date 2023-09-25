@@ -14,23 +14,25 @@ final bool? isGrey;
       children: [
         Text(
           text,
-          style:isGrey!? StyleManager.textStyleDark24.copyWith(
+          style:isGrey!? StyleManager.textStyleDark18.copyWith(
             color: ColorsManager.secondaryDark2,
             fontWeight: FontWeight.bold,
+            fontSize: 15,
           ):StyleManager.textStyleDark24.copyWith(
             fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontSize: 15,
           ),
         ),
         const Spacer(),
         Text(
           num,
-          style: isGrey!? StyleManager.textStyleDark24.copyWith(
+          style: isGrey!? StyleManager.textStyleDark18.copyWith(
             color: ColorsManager.secondaryDark2,
             fontWeight: FontWeight.bold,
+            fontSize: 15,
           ):StyleManager.textStyleDark24.copyWith(
             fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontSize: 15,
           ),
         ),
       ],
