@@ -12,17 +12,25 @@ class TotalItemsDetails extends StatelessWidget {
     return Container(
      color: ColorsManager.white,
       padding:PaddingManager.bodyPadding,
-      child: const Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      child:  ListView(
+        children: const [
           Row(
             children: [
-              Expanded(child: ItemDetailsContainer()),
+              Expanded(child: ItemDetailsContainer(color: ColorsManager.blue,title: "دليفري",)),
               SizedBox(width: 15,),
-              Expanded(child: ItemDetailsContainer()),
+              Expanded(child: ItemDetailsContainer(color: ColorsManager.cyan,title: "صالة")),
               SizedBox(width: 15,),
-              Expanded(child: ItemDetailsContainer()),
+              Expanded(child: ItemDetailsContainer(color: ColorsManager.black,title: "استلام")),
+            ],
+          ),
+          SizedBox(height: 10,),
+          Row(
+            children: [
+              Expanded(child: ItemDetailsContainer(color: ColorsManager.grey,title: "تيك اواى")),
+              SizedBox(width: 15,),
+              Expanded(child: SizedBox()),
+              SizedBox(width: 15,),
+              Expanded(child: SizedBox()),
             ],
           ),
 

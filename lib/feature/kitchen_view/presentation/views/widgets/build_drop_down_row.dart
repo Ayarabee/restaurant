@@ -20,14 +20,14 @@ final Function()onTap;
           ),
           Text(
             "مكرونة كبدة",
-            style: StyleManager.textStyleDark24.copyWith(
+            style: StyleManager.textStyleDark18.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
           const Spacer(),
           Text(
             "24",
-            style: StyleManager.textStyleDark24.copyWith(
+            style: StyleManager.textStyleDark18.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),

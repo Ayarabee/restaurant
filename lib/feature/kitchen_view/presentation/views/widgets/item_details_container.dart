@@ -6,8 +6,9 @@ import 'package:restaurant/feature/kitchen_view/presentation/views/widgets/share
 import 'package:restaurant/feature/kitchen_view/presentation/views/widgets/title_data_continer.dart';
 
 class ItemDetailsContainer extends StatelessWidget {
-  const ItemDetailsContainer({super.key});
-
+  const ItemDetailsContainer({super.key, required this.color, required this.title});
+final Color color;
+  final String title;
   @override
   Widget build(BuildContext context) {
     List<Map<String,dynamic>>ordersList=[
@@ -33,18 +34,18 @@ class ItemDetailsContainer extends StatelessWidget {
       },
     ];
     return Container(
-      height: 320,
+      height: 240,
       decoration: BoxDecoration(
         borderRadius: BorderManager.radius15,
         border: Border.all(
-          color: ColorsManager.blue,
+          color: color,
         ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TitleDataContainer(),
+           TitleDataContainer(title: title,color: color,),
           const SizedBox(height: 5,),
           Padding(
             padding: PaddingManager.itemDetailsPadding,
@@ -55,12 +56,13 @@ class ItemDetailsContainer extends StatelessWidget {
                     Text("الاصناف",style: StyleManager.textStyleLight18.copyWith(
                       color: ColorsManager.primary,
                       fontWeight: FontWeight.normal,
-                      fontSize: 15,
+                      fontSize: 14,
                     ),),
                     const Spacer(),
                     Text("5",style: StyleManager.textStyleLight18.copyWith(
                       color: ColorsManager.primary,
                       fontWeight: FontWeight.normal,
+                      fontSize: 14,
                     ),),
                   ],
                 ),
