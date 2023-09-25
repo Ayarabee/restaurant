@@ -20,10 +20,12 @@ abstract class SizeManager {
 abstract class PaddingManager {
   static const EdgeInsetsGeometry divider =
       EdgeInsets.symmetric(horizontal: 25);
-  static const EdgeInsetsGeometry fromFieldMargin = EdgeInsets.all(20.0);
-  static const EdgeInsetsGeometry bodyPadding = EdgeInsets.symmetric(
-    horizontal: 15.0,
-    vertical: 20,
+  static EdgeInsetsGeometry fromFieldMargin = const EdgeInsets.all(20.0).copyWith(
+    top: 0.0,
+  );
+  static const EdgeInsetsGeometry bodyPadding = EdgeInsets.only(
+    right: 15.0,
+    left: 15.0, top: 10,
   );
   static const EdgeInsetsGeometry itemDetailsPadding = EdgeInsets.symmetric(
     horizontal: 13.0,

@@ -15,10 +15,11 @@ class KitchenViewBody extends StatelessWidget {
       decoration: BoxDecoration(
           color: ColorsManager.white,
           borderRadius: BorderManager.radius15,
-          border: Border.all(
-            color: ColorsManager.primary,
-            width: 5,
-          )),
+          // border: Border.all(
+          //   color: ColorsManager.primary,
+          //   width: 5,
+          // )
+      ),
       child: const DefaultBody(
         titleDivider: false,
         title: "إجمالي  الطلبات: 4",
