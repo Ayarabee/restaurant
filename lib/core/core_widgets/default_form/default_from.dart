@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant/core/core_widgets/default_form/default_form_field.dart';
 import 'package:restaurant/core/resources_manager/size_manager.dart';
+import 'package:restaurant/core/resources_manager/style_manager.dart';
 
 import 'default_label.dart';
 
@@ -12,6 +13,7 @@ class DefaultForm extends StatelessWidget {
     required this.controller,
     this.suffixIcon,
     this.textInputType = TextInputType.text,
+    this.labelStyle=StyleManager.textStyleDark24,
     this.isPassword = false,
     this.onChange,
     this.validator,
@@ -26,6 +28,7 @@ class DefaultForm extends StatelessWidget {
   final TextEditingController controller;
   final Widget? suffixIcon;
   final TextInputType textInputType;
+  final TextStyle? labelStyle;
   final void Function(String)? onChange;
   final String? Function(String?)? validator;
   final String text;
@@ -53,6 +56,7 @@ class DefaultForm extends StatelessWidget {
           onChange: onChange,
           isPassword: isPassword,
           suffixIcon: suffixIcon,
+          labelStyle: labelStyle,
           textInputType: textInputType,
           maxLines: maxLines,
           validator: validator,
