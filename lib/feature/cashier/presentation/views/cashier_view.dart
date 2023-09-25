@@ -20,3 +20,4 @@ class CashierView extends StatelessWidget {
     );
   }
 }
+// new
