@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:restaurant/core/core_widgets/default_body/default_divider.dart';
 import 'package:restaurant/core/core_widgets/default_buttons/default_empty_button.dart';
 import 'package:restaurant/core/core_widgets/default_buttons/default_filled_button.dart';
-
 import '../../../../../../core/resources_manager/assets_manager.dart';
 
 class SideColumItem extends StatelessWidget {

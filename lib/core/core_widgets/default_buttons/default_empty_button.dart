@@ -45,10 +45,10 @@ class _DefaultEmptyButtonState extends State<DefaultEmptyButton> {
           child: Text(
             widget.text,
             style: tapped
-                ? StyleManager.textStyleDark24.copyWith(
-                    color: ColorsManager.white,
-                  )
-                : StyleManager.textStyleDark24,
+                ? StyleManager.textStyleLight18
+                : StyleManager.textStyleDark18.copyWith(
+              fontWeight: FontWeight.bold
+            ),
           ),
         ),
       ),

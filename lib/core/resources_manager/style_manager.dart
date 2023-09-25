@@ -40,13 +40,28 @@ abstract class StyleManager {
   static const textStyleLight18 = TextStyle(
       fontSize: 18, fontWeight: FontWeight.bold, color: ColorsManager.white);
 
-  static const textStyle16 = TextStyle(
+  static const textStyleDark16 = TextStyle(
     fontSize: 16,
+    fontWeight: FontWeight.bold
   );
 
-  // cashier items text
+  static const textStyle16 = TextStyle(
+    fontSize: 16,
+      fontWeight: FontWeight.bold,
+    color: ColorsManager.white
+
+  );
+
+  // cashier items text //Real button text
   static const textStyle14 = TextStyle(
       fontSize: 14, fontWeight: FontWeight.bold, color: ColorsManager.white);
+
+  //Real button text
+  static const textStyleDark14 = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: ColorsManager.black
+  );
 
   // kitchen order items, employees data
   static const textStyle20 = TextStyle(

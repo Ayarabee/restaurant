@@ -3,8 +3,10 @@ import 'package:restaurant/core/resources_manager/colors_manager.dart';
 import 'package:restaurant/core/resources_manager/style_manager.dart';
 
 class BuildDropDownRow extends StatelessWidget {
-  const BuildDropDownRow({super.key, required this.onTap});
+  const BuildDropDownRow({super.key, required this.onTap, required this.text, required this.num});
 final Function()onTap;
+final String text;
+final String num;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -19,15 +21,15 @@ final Function()onTap;
             ),
           ),
           Text(
-            "مكرونة كبدة",
-            style: StyleManager.textStyleDark24.copyWith(
+           text,
+            style: StyleManager.textStyleDark18.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
           const Spacer(),
           Text(
-            "24",
-            style: StyleManager.textStyleDark24.copyWith(
+            num,
+            style: StyleManager.textStyleDark18.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -19,7 +19,7 @@ class SharedContainer extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: StyleManager.textStyleDark24.copyWith(
+          style: StyleManager.textStyleDark18.copyWith(
             color: ColorsManager.white,
             fontWeight: FontWeight.bold,
           ),

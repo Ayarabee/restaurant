@@ -21,6 +21,8 @@ class _TotalOrdersDropDownState extends State<TotalOrdersDropDown> {
     return Column(
       children: [
         BuildDropDownRow(
+          text:  "مكرونة كبدة",
+          num: "24",
           onTap: () {
             setState(() {
               tapped = !tapped;
@@ -33,7 +35,7 @@ class _TotalOrdersDropDownState extends State<TotalOrdersDropDown> {
         for (int i = 0; i < typeItems.length; i++)
          tapped? Padding(
             padding:
-                EdgeInsets.only(bottom: i < typeItems.length - 1 ? 10.0 : 0),
+                EdgeInsets.only(bottom: i < typeItems.length - 1 ? 10.0 : 0,right: 17),
             child: SharedOrderRow(
               text: typeItems[i]["text"],
               num: typeItems[i]["num"],
