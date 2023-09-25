@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:restaurant/core/local_database/cache_data.dart';
 import 'package:restaurant/core/localization/app_localization.dart';
 import 'package:restaurant/core/resources_manager/constants_manager.dart';
+
+import '../../feature/items/presentation/views/add_item_view.dart';
+import '../../feature/items/presentation/views/add_quantity_view.dart';
  
 class MyApp extends StatelessWidget {
 
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: Locale(CacheData.lang!),
       translations: AppLocalization(),
-      //home: const AddItemView(),
+      //home: const AddQuantityView(),
     );
   }
 }
