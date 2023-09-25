@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant/core/core_widgets/default_form/default_form_field.dart';
 import 'package:restaurant/core/core_widgets/default_form/default_form_field2.dart';
 import 'package:restaurant/core/resources_manager/size_manager.dart';
 
