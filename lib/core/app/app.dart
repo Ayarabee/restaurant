@@ -6,6 +6,7 @@ import 'package:restaurant/core/localization/app_localization.dart';
 import 'package:restaurant/core/resources_manager/constants_manager.dart';
 import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
 
+import '../../feature/items/presentation/views/add_item_view.dart';
 import '../../feature/items/presentation/views/add_quantity_view.dart';
 // saber
 class MyApp extends StatelessWidget {
@@ -37,5 +38,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-//edit
-//ra
