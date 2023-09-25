@@ -8,10 +8,10 @@ class AddItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
+    return   const Scaffold(
       body: DefaultBody(
         title: "إضافة صنف",
-        sideBarBody: const SideColumItem(),
+        sideBarBody: SideColumItem(),
         sideBarTitleToDivider:30,
         body: SingleChildScrollView(
             child: MainColumItemBody(),
