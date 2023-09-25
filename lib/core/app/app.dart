@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:restaurant/core/local_database/cache_data.dart';
 import 'package:restaurant/core/localization/app_localization.dart';
 import 'package:restaurant/core/resources_manager/constants_manager.dart';
-import 'package:restaurant/feature/kitchen_view/presentation/views/kitchen_view.dart';
 
 class MyApp extends StatelessWidget {
 

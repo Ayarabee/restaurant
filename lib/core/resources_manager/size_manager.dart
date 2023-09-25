@@ -12,7 +12,7 @@ abstract class BorderManager {
 }
 
 abstract class SizeManager {
-  static const double labelFormDivider = 15;
+  static const double labelFormDivider = 10;
   static const double s40 = 40;
   static const double sideBarTitleToDivider = 30;
 }

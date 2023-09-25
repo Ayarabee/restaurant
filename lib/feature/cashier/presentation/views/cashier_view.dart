@@ -4,7 +4,7 @@ import 'package:restaurant/core/core_widgets/default_body/default_body.dart';
 
 class CashierView extends StatelessWidget {
   const CashierView({super.key});
-
+// edit now
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -20,3 +20,4 @@ class CashierView extends StatelessWidget {
     );
   }
 }
+// new
