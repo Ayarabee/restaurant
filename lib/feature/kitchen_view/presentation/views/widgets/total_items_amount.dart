@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'build_drop_down_row.dart';
 import 'shared_container.dart';
 import 'shared_order_row.dart';
 import 'total_orders_drop_down.dart';
@@ -32,7 +33,7 @@ class TotalItemsAmount extends StatelessWidget {
         for(int i=0;i<ordersList.length;i++)
          Padding(
           padding: EdgeInsets.only(bottom:i< ordersList.length-1?10.0:0),
-          child: SharedOrderRow(text: ordersList[i]['text'],num:  ordersList[i]['num'],),
+          child: BuildDropDownRow(text: ordersList[i]['text'],num:  ordersList[i]['num'],onTap: (){},),
         ),
       ],
     );
