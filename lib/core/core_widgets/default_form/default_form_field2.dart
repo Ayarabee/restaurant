@@ -3,8 +3,8 @@ import 'package:restaurant/core/resources_manager/colors_manager.dart';
 import 'package:restaurant/core/resources_manager/size_manager.dart';
 import 'package:restaurant/core/resources_manager/style_manager.dart';
 
-class DefaultFormField extends StatelessWidget {
-  const DefaultFormField({
+class DefaultFormField2 extends StatelessWidget {
+  const DefaultFormField2({
     super.key,
     this.enabled = true,
     required this.controller,
@@ -42,7 +42,8 @@ class DefaultFormField extends StatelessWidget {
       controller: controller,
       onChanged: onChange,
       style: StyleManager.textStyleDark14.copyWith(
-        fontWeight: FontWeight.normal
+        fontWeight: FontWeight.normal,
+            color: ColorsManager.primary
       ),
       obscureText: isPassword!,
       obscuringCharacter: '●',
@@ -57,11 +58,11 @@ class DefaultFormField extends StatelessWidget {
         ),
           errorStyle: StyleManager.textStyleDark24.copyWith(color: ColorsManager.red),
           filled: true,
-          fillColor: ColorsManager.secondary,
+          fillColor: ColorsManager.white,
           contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderManager.radius15,
-            borderSide: const BorderSide(color: ColorsManager.secondary)
+            borderSide: const BorderSide(color: ColorsManager.white)
           ),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderManager.radius15,

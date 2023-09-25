@@ -46,9 +46,8 @@ class _DefaultFilledButtonState extends State<DefaultFilledButton> {
           child: Text(
             widget.text,
             style: tapped
-                ? StyleManager.textStylePrimary24
-                : StyleManager.textStyleDark24
-                    .copyWith(color: ColorsManager.white),
+                ? StyleManager.textStyleLight18.copyWith(color: ColorsManager.primary)
+                : StyleManager.textStyleLight18,
           ),
         ),
       ),

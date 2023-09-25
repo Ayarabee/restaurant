@@ -14,7 +14,9 @@ class AddItemView extends StatelessWidget {
         sideBarBody: SideColumItem(),
         sideBarTitleToDivider:30,
         body: SingleChildScrollView(
-            child: MainColumItemBody(),
+            child: MainColumItemBody(
+              isEdit: false,
+            ),
         ),
       ),
     );
