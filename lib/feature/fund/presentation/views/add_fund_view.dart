@@ -1,11 +1,14 @@
 
 import 'package:flutter/material.dart';
+import 'widgets/add_fund_view_body.dart';
 
-class BoxesView extends StatelessWidget {
-  const BoxesView({super.key});
+class FundsView extends StatelessWidget {
+  const FundsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: FundsViewBody(),
+    );
   }
 }
