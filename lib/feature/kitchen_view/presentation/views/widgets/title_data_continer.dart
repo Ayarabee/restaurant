@@ -4,14 +4,15 @@ import 'package:restaurant/core/resources_manager/size_manager.dart';
 import 'package:restaurant/core/resources_manager/style_manager.dart';
 
 class TitleDataContainer extends StatelessWidget {
-  const TitleDataContainer({super.key});
-
+  const TitleDataContainer({super.key, required this.title, required this.color});
+final String title;
+final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: PaddingManager.itemDetailsPadding,
       decoration: BoxDecoration(
-        color: ColorsManager.blue,
+        color: color,
         borderRadius: BorderManager.radius15,
       ),
       child: Column(
@@ -23,7 +24,7 @@ class TitleDataContainer extends StatelessWidget {
           Text(
             "مساكن : 010123456789",
             style: StyleManager.textStyleLight18.copyWith(
-              fontSize: 15,
+              fontSize: 13,
             ),
           ),
           buildTimerAndPriceRow(),
@@ -38,18 +39,18 @@ class TitleDataContainer extends StatelessWidget {
             Text(
               "00:17:14",
               style: StyleManager.textStyleLight18.copyWith(
-                fontSize: 15,
+                fontSize: 13,
               ),
             ),
             const SizedBox(
               width: 8,
             ),
-            const Icon(Icons.timer_outlined,color: ColorsManager.white,size: 15,),
+            const Icon(Icons.timer_outlined,color: ColorsManager.white,size: 13,),
             const Spacer(),
             Text(
               " 160.00جنيه ",
               style: StyleManager.textStylePrimary24
-                  .copyWith(fontSize: 15),
+                  .copyWith(fontSize: 13),
             )
           ],
         );
@@ -60,10 +61,10 @@ class TitleDataContainer extends StatelessWidget {
           children: [
             const Spacer(),
             Text(
-              "دليفري",
+              title,
               style: StyleManager.textStylePrimary24.copyWith(
                 color: ColorsManager.white,
-                fontSize: 18,
+                fontSize: 15,
               ),
             ),
             const Spacer(),
@@ -71,7 +72,7 @@ class TitleDataContainer extends StatelessWidget {
               "#138",
               style: StyleManager.textStylePrimary24.copyWith(
                 color: ColorsManager.white,
-                fontSize: 18,
+                fontSize: 15,
               ),
             ),
           ],

@@ -52,8 +52,11 @@ class DefaultBody extends StatelessWidget {
                       children: [
                         Text(
                           title!,
-                          style: StyleManager.textStyle36,
+                          style: StyleManager.textStyle20.copyWith(
+                            fontWeight: FontWeight.bold
+                          ),
                           textAlign: TextAlign.center,
+
                         ),
                         if (titleDivider)
                           Column(
