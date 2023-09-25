@@ -54,7 +54,7 @@ class AddQuantityBody extends StatelessWidget {
                   suffixIcon: DefaultNumberPicker(
                     onAdd:  ()
                     {
-                      // cubit.onAddMinusQuantity(
+                      //// cubit.onAddMinusQuantity(
                       //     add: true,
                       //     value: cubit.quant.text.toString(),
                       //     controller: cubit.quant
