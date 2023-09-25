@@ -36,7 +36,7 @@ class DefaultCheckBox extends StatelessWidget {
         Expanded(
           child: Text(
           title,
-          style: StyleManager.textStyleDark24,
+          style: StyleManager.textStyle20,
           ),
         )
       ],
