@@ -17,22 +17,26 @@ class DefaultNumberPicker extends StatelessWidget {
         InkWell(
           onTap: onAdd,
           child: Container(
+            width: 30,
             decoration: BoxDecoration(
               color: ColorsManager.primary,
-              borderRadius: BorderManager.radius3,
+              borderRadius: BorderManager.radius5,
             ),
-            child: const Icon(Icons.keyboard_arrow_up, color: ColorsManager.white,),
+            child: const Icon(
+              Icons.keyboard_arrow_up_outlined, color: ColorsManager.white,
+            ),
           ),
         ),
         const SizedBox(height: 2,),
         InkWell(
           onTap: onMinus,
           child: Container(
+            width: 30,
             decoration: BoxDecoration(
               color: ColorsManager.primary,
-              borderRadius: BorderManager.radius3,
+              borderRadius: BorderManager.radius5,
             ),
-            child: const Icon(Icons.keyboard_arrow_down, color: ColorsManager.white,),
+            child: const Icon(Icons.keyboard_arrow_down_outlined, color: ColorsManager.white,),
           ),
         )
       ],
