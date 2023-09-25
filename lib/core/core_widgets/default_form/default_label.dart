@@ -13,7 +13,9 @@ class DefaultLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: StyleManager.textStyle16,
+      style: StyleManager.textStyleDark16.copyWith(
+        fontWeight: FontWeight.normal
+      ),
     );
   }
 }

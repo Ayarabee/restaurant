@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         locale: Locale(CacheData.lang!),
         translations: AppLocalization(),
         //home: AddItemView(),
-        home: EditItemView(itemModel: ItemModel()),
+        //home: EditItemView(itemModel: ItemModel()),
       )
     );
   }
