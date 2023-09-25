@@ -30,83 +30,85 @@ class DefaultBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        // side bar
-        Expanded(
-          flex: 2,
-          child: Container(
-            padding: PaddingManager.sideBar,
-            // width: MediaQuery.of(context).size.width*0.271,
-            //height: double.infinity,
-            decoration: BoxDecoration(
-                color: ColorsManager.secondary,
-                borderRadius: BorderManager.sideBar),
-            child: Column(
-              children: [
-                if (title != null)
+    return SafeArea(
+      child: Row(
+        children: [
+          // side bar
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: PaddingManager.sideBar,
+              // width: MediaQuery.of(context).size.width*0.271,
+              //height: double.infinity,
+              decoration: BoxDecoration(
+                  color: ColorsManager.secondary,
+                  borderRadius: BorderManager.sideBar),
+              child: Column(
+                children: [
+                  if (title != null)
+                    Column(
+                      children: [
+                        Text(
+                          title!,
+                          style: StyleManager.textStyle36,
+                          textAlign: TextAlign.center,
+                        ),
+                        if (titleDivider)
+                          Column(
+                            children: [
+                              SizedBox(
+                                height: sideBarTitleToDivider,
+                              ),
+                              const DefaultDivider()
+                            ],
+                          ),
+                      ],
+                    ),
+                  if (sideBarBody == null) const Spacer(),
+                  if (sideBarBody != null) Expanded(child: sideBarBody!),
                   Column(
                     children: [
-                      Text(
-                        title!,
-                        style: StyleManager.textStyle36,
-                        textAlign: TextAlign.center,
-                      ),
-                      if (titleDivider)
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: sideBarTitleToDivider,
-                            ),
-                            const DefaultDivider()
-                          ],
+                      if (sideBarEmptyButton == null &&
+                          sideBarFilledButton != null)
+                        const DefaultDivider(),
+                      if (sideBarFilledButton != null)
+                        DefaultFilledButton(
+                            onPressed: sideBarFilledButton!.onTab,
+                            text: sideBarFilledButton!.text),
+                      if (sideBarFilledButton != null &&
+                          sideBarEmptyButton != null)
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 20.0),
+                          child: DefaultDivider(),
                         ),
+                      if (sideBarEmptyButton != null)
+                        DefaultEmptyButton(
+                            onPressed: sideBarEmptyButton!.onTab,
+                            text: sideBarEmptyButton!.text),
                     ],
-                  ),
-                if (sideBarBody == null) const Spacer(),
-                if (sideBarBody != null) Expanded(child: sideBarBody!),
-                Column(
-                  children: [
-                    if (sideBarEmptyButton == null &&
-                        sideBarFilledButton != null)
-                      const DefaultDivider(),
-                    if (sideBarFilledButton != null)
-                      DefaultFilledButton(
-                          onPressed: sideBarFilledButton!.onTab,
-                          text: sideBarFilledButton!.text),
-                    if (sideBarFilledButton != null &&
-                        sideBarEmptyButton != null)
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 20.0),
-                        child: DefaultDivider(),
-                      ),
-                    if (sideBarEmptyButton != null)
-                      DefaultEmptyButton(
-                          onPressed: sideBarEmptyButton!.onTab,
-                          text: sideBarEmptyButton!.text),
-                  ],
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
-        ),
 
-        // body
-        Expanded(
-          flex: 6,
-          child: Container(
-            color: ColorsManager.white,
-            child: Column(
-              children: [
-                Expanded(
-                  child: body,
-                ),
-                const DefaultNavBar()
-              ],
+          // body
+          Expanded(
+            flex: 6,
+            child: Container(
+              color: ColorsManager.white,
+              child: Column(
+                children: [
+                  Expanded(
+                    child: body,
+                  ),
+                  const DefaultNavBar()
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
