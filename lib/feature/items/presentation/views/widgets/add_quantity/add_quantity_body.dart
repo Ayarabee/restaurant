@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/core_widgets/default_form/default_from.dart';
-import '../../../../../core/core_widgets/number_picker/default_number_picker.dart';
-import '../../../../../core/resources_manager/colors_manager.dart';
+import '../../../../../../core/core_widgets/default_form/default_from.dart';
+import '../../../../../../core/core_widgets/number_picker/default_number_picker.dart';
+import '../../../../../../core/resources_manager/colors_manager.dart';
 
 class AddQuantityBody extends StatelessWidget {
   const AddQuantityBody({super.key});
