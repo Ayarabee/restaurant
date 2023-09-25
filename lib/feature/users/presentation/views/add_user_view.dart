@@ -7,12 +7,14 @@ import 'package:restaurant/core/resources_manager/colors_manager.dart';
 
 import '../../../../core/core_widgets/switch_check_box/default_switch.dart';
 
+//
 //66
+TextEditingController nameController = TextEditingController();
+TextEditingController accountController = TextEditingController();
+TextEditingController passwordController = TextEditingController();
+
 class AddUserView extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController accountController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  AddUserView({super.key});
+  const AddUserView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
