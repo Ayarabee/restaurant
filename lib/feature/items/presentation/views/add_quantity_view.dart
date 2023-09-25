@@ -15,7 +15,7 @@ class AddQuantityView extends StatelessWidget {
         sideBarEmptyButton: DefaultButtonManager(text: 'الغاء', onTab: (){}),
         sideBarFilledButton: DefaultButtonManager(text: 'حفظ', onTab: (){}),
         sideBarTitleToDivider:30,
-        body: SizedBox(),
+        body: const SizedBox(),
       ),
     );
   }
