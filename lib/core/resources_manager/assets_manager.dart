@@ -29,6 +29,7 @@ class AssetsManager
   static const String kitchen = '${_imagePath}kitchen.svg';
   static const String cashier = '${_imagePath}cashier.svg';
   static const String deleteMe = '${_imagePath}delete_me.jpg';
+  static const String deleteMe2 = '${_imagePath}delete_me2.png';
 
 
 }
