@@ -3,7 +3,6 @@ import 'package:restaurant/core/core_widgets/default_form/default_from.dart';
 import 'package:restaurant/core/core_widgets/number_picker/default_number_picker.dart';
 import 'package:restaurant/core/core_widgets/switch_check_box/default_check_box.dart';
 import 'package:restaurant/core/resources_manager/colors_manager.dart';
-import 'package:restaurant/core/resources_manager/style_manager.dart';
 
 class AddFundBodyItems extends StatefulWidget {
   const AddFundBodyItems({super.key});
@@ -32,7 +31,7 @@ class _AddFundBodyItemsState extends State<AddFundBodyItems> {
           DefaultForm(
             controller: costController,
             text: 'المبلغ',
-            labelStyle: StyleManager.textStyle20,
+            
             suffixPadding: 0.0,
             hintText: "$costCount",
             suffixIcon: DefaultNumberPicker(
@@ -54,7 +53,7 @@ class _AddFundBodyItemsState extends State<AddFundBodyItems> {
           DefaultForm(
             controller: dateController,
             text: 'التاريخ',
-            labelStyle: StyleManager.textStyle20,
+            
             // suffixPadding: 0.0,
             // hintText:"$costCount" ,
             suffixIcon: IconButton(
@@ -72,7 +71,6 @@ class _AddFundBodyItemsState extends State<AddFundBodyItems> {
             controller: noteController,
             maxLines: 2,
             text: 'البيان',
-            labelStyle: StyleManager.textStyle20,
           ),
           const SizedBox(
             height: 15,
@@ -116,7 +114,7 @@ class _AddFundBodyItemsState extends State<AddFundBodyItems> {
           DefaultForm(
             controller: balanceController,
             text: 'الرصيد',
-            labelStyle: StyleManager.textStyle20,
+            
           ),
         ],
       ),
