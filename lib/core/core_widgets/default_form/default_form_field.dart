@@ -14,7 +14,7 @@ class DefaultFormField extends StatelessWidget {
     this.onChange,
     this.validator,
     this.maxLines = 1, this.hintText,
-    this.suffixPadding = 5.0, this.labelStyle=StyleManager.textStyleDark24,
+    this.suffixPadding = 5.0,
   });
 
   final int maxLines;
@@ -24,7 +24,6 @@ class DefaultFormField extends StatelessWidget {
   final String? hintText;
   final TextEditingController? controller;
   final Widget? suffixIcon;
-  final TextStyle? labelStyle;
   final TextInputType textInputType;
   final void Function(String)? onChange;
   final String? Function(String?)? validator;
@@ -43,7 +42,9 @@ class DefaultFormField extends StatelessWidget {
       controller: controller,
       onChanged: onChange,
       maxLines: maxLines,
-      style: labelStyle,
+      style: StyleManager.textStyleDark14.copyWith(
+        fontWeight: FontWeight.normal,
+      ),
       obscureText: isPassword!,
       obscuringCharacter: '●',
       cursorColor: ColorsManager.primary,
