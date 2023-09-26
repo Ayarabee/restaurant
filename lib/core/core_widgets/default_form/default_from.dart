@@ -14,6 +14,7 @@ class DefaultForm extends StatelessWidget {
     this.textInputType = TextInputType.text,
     this.isPassword = false,
     this.onChange,
+    this.onTap,
     this.validator,
     this.maxLines = 1,
     this.suffixPadding = 5.0,
@@ -27,6 +28,7 @@ class DefaultForm extends StatelessWidget {
   final Widget? suffixIcon;
   final TextInputType textInputType;
   final void Function(String)? onChange;
+  final void Function()? onTap;
   final String? Function(String?)? validator;
   final String text;
   final double suffixPadding;
@@ -51,6 +53,7 @@ class DefaultForm extends StatelessWidget {
           controller: controller,
           enabled: enabled,
           onChange: onChange,
+          onTap: onTap,
           isPassword: isPassword,
           suffixIcon: suffixIcon,
           textInputType: textInputType,

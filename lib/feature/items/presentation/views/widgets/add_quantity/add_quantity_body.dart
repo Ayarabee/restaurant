@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
+import 'package:restaurant/feature/items/presentation/manager/quantity_cubit.dart';
 
 import '../../../../../../core/core_widgets/default_form/default_from.dart';
 import '../../../../../../core/core_widgets/number_picker/default_number_picker.dart';
 import '../../../../../../core/resources_manager/colors_manager.dart';
 
-class AddQuantityBody extends StatelessWidget {
+class AddQuantityBody extends StatefulWidget {
   const AddQuantityBody({super.key});
 
+  @override
+  State<AddQuantityBody> createState() => _AddQuantityBodyState();
+
+
+}
+
+class _AddQuantityBodyState extends State<AddQuantityBody> {
+  @override
+  void initState() {
+    ItemCubit.get(context);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
       TextEditingController receiver =TextEditingController(text: 'محمد');
@@ -20,93 +35,106 @@ class AddQuantityBody extends StatelessWidget {
         vertical: 20,
 
       ),
-      child: Column(
-        children: [
-          Row(
+      child: BlocConsumer<QuantityCubit,QuantityState>(
+        listener: (BuildContext context, QuantityState state) {  },
+        builder: (BuildContext context, QuantityState state) {
+          return Column(
             children: [
-              Expanded(
-                child: DefaultForm(
-                  controller: date,
-                  text: 'التاريخ',
-                  suffixIcon: const Icon(
-                    Icons.calendar_today_outlined,
-                    color: ColorsManager.primary,
-                    size: 20,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 15,),
-              Expanded(
-                child: DefaultForm(
-                  controller: receiver,
-                  text: 'المستلم',
-                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 10,),
-          Row(
-            children: [
-              Expanded(
-                child: DefaultForm(
-                  controller: import,
-                  text: 'الوارد',
-                  suffixIcon: DefaultNumberPicker(
-                    onAdd:  ()
-                    {
-                      //// cubit.onAddMinusQuantity(
-                      //     add: true,
-                      //     value: cubit.quant.text.toString(),
-                      //     controller: cubit.quant
-                      // );
-                    },
-                    onMinus:  ()
-                    {
-                      // cubit.onAddMinusQuantity(
-                      //     add: false,
-                      //     value: cubit.quant.text.toString(),
-                      //     controller: cubit.quant
-                      //);
-                    },
-                  ),
-                  suffixPadding: 0,
-                ),
-              ),
-              const SizedBox(width: 15,),
-              Expanded(
-                child: DefaultForm(
-                  controller: export,
-                  text: 'الخارج',
-                  suffixIcon: DefaultNumberPicker(
-                    onAdd:  ()
-                    {
-                      // cubit.onAddMinusQuantity(
-                      //     add: true,
-                      //     value: cubit.quantLimit.text.toString(),
-                      //     controller: cubit.quantLimit
-                      // );
-                    },
-                    onMinus:  ()
-                    {
-                      // cubit.onAddMinusQuantity(
-                      //     add: false,
-                      //     value: cubit.quantLimit.text.toString(),
-                      //     controller: cubit.quantLimit
-                      // );
-                    },
-                  ),
-                  suffixPadding: 0,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 10,),
-          DefaultForm(
-            controller: note,
-            text: 'الملاحظات',
-          ),
+              Row(
+                children: [
+                  Expanded(
+                    child: DefaultForm(
+                      controller: date,
+                      text: 'التاريخ',
+                      suffixIcon:  const Icon(
+                        Icons.calendar_today_outlined,
+                        color: ColorsManager.primary,
+                        size: 20,
 
-        ],
+                      ),
+                        onTap: (){showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime.now(),
+                    lastDate: DateTime.parse('15/6/2100'),
+                    );
+                      }
+                    ),
+                  ),
+                  const SizedBox(width: 15,),
+                  Expanded(
+                    child: DefaultForm(
+                      controller: receiver,
+                      text: 'المستلم',
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10,),
+              Row(
+                children: [
+                  Expanded(
+                    child: DefaultForm(
+                      controller: import,
+                      text: 'الوارد',
+                      suffixIcon: DefaultNumberPicker(
+                        onAdd:  ()
+                        {
+                          // ItemCubit.onAddMinusQuantity(
+                          //     add: true,
+                          //     value: import.text.toString(),
+                          //     controller:import
+                          // );
+                        },
+                        onMinus:  ()
+                        {
+                          // cubit.onAddMinusQuantity(
+                          //     add: false,
+                          //     value: import.text.toString(),
+                          //     controller: import
+                          // );
+                        },
+                      ),
+                      suffixPadding: 0,
+                    ),
+                  ),
+                  const SizedBox(width: 15,),
+                  Expanded(
+                    child: DefaultForm(
+                      controller: export,
+                      text: 'الخارج',
+                      suffixIcon: DefaultNumberPicker(
+                        onAdd:  ()
+                        {
+                          // ItemCubit.onAddMinusQuantity(
+                          //     add: true,
+                          //     value: export.text.toString(),
+                          //     controller:export
+                          // );
+                        },
+                        onMinus:  ()
+                        {
+                          // ItemCubit.onAddMinusQuantity(
+                          //     add: false,
+                          //     value: export.text.toString(),
+                          //     controller:export
+                          // );
+                        },
+                      ),
+                      suffixPadding: 0,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10,),
+              DefaultForm(
+                controller: note,
+                text: 'الملاحظات',
+              ),
+
+            ],
+          );
+        },
       ),
     );
   }

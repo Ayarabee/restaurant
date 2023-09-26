@@ -12,6 +12,7 @@ class DefaultFormField extends StatelessWidget {
     this.textInputType = TextInputType.text,
     this.isPassword = false,
     this.onChange,
+    this.onTap,
     this.validator,
     this.maxLines = 1, this.hintText,
     this.suffixPadding = 5.0,
@@ -26,6 +27,7 @@ class DefaultFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final TextInputType textInputType;
   final void Function(String)? onChange;
+  final void Function()? onTap;
   final String? Function(String?)? validator;
 
   @override
@@ -38,6 +40,7 @@ class DefaultFormField extends StatelessWidget {
         }
         return null;
       },
+      onTap: onTap,
       keyboardType: textInputType,
       controller: controller,
       onChanged: onChange,
