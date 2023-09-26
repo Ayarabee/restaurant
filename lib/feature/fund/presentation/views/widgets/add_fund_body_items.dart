@@ -27,6 +27,7 @@ class _AddFundBodyItemsState extends State<AddFundBodyItems> {
       padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 20)
           .copyWith(bottom: 0.0),
       child: ListView(
+        physics: const BouncingScrollPhysics(),
         children: [
           DefaultForm(
             controller: costController,

@@ -15,6 +15,7 @@ class DefaultFormField extends StatelessWidget {
     this.validator,
     this.maxLines = 1, this.hintText,
     this.suffixPadding = 5.0,
+    this.isFillWhite=false,
   });
 
   final int maxLines;
@@ -27,6 +28,7 @@ class DefaultFormField extends StatelessWidget {
   final TextInputType textInputType;
   final void Function(String)? onChange;
   final String? Function(String?)? validator;
+  final bool? isFillWhite;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,7 @@ class DefaultFormField extends StatelessWidget {
         ),
           errorStyle: StyleManager.textStyleDark24.copyWith(color: ColorsManager.red),
           filled: true,
-          fillColor: ColorsManager.secondary,
+          fillColor:isFillWhite!?ColorsManager.white: ColorsManager.secondary,
           contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderManager.radius15,
