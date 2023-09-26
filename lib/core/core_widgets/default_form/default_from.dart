@@ -13,6 +13,7 @@ class DefaultForm extends StatelessWidget {
     this.suffixIcon,
     this.textInputType = TextInputType.text,
     this.isPassword = false,
+    this.readOnly = false,
     this.onChange,
     this.onTap,
     this.validator,
@@ -23,6 +24,7 @@ class DefaultForm extends StatelessWidget {
 
   final int maxLines;
   final bool enabled;
+  final bool readOnly;
   final bool? isPassword;
   final TextEditingController controller;
   final Widget? suffixIcon;
@@ -48,6 +50,7 @@ class DefaultForm extends StatelessWidget {
           height: SizeManager.labelFormDivider,
         ),
         DefaultFormField(
+          readOnly: readOnly,
           hintText: hintText,
           suffixPadding: suffixPadding,
           controller: controller,

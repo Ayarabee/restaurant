@@ -7,6 +7,7 @@ class DefaultFormField extends StatelessWidget {
   const DefaultFormField({
     super.key,
     this.enabled = true,
+    this.readOnly = false,
     required this.controller,
     this.suffixIcon,
     this.textInputType = TextInputType.text,
@@ -21,6 +22,7 @@ class DefaultFormField extends StatelessWidget {
   final int maxLines;
   final double suffixPadding;
   final bool enabled;
+  final bool readOnly;
   final bool? isPassword;
   final String? hintText;
   final TextEditingController? controller;
@@ -40,6 +42,7 @@ class DefaultFormField extends StatelessWidget {
         }
         return null;
       },
+      readOnly: readOnly,
       onTap: onTap,
       keyboardType: textInputType,
       controller: controller,

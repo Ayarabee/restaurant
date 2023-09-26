@@ -17,6 +17,7 @@ class AddQuantityBody extends StatefulWidget {
 }
 
 class _AddQuantityBodyState extends State<AddQuantityBody> {
+
   @override
   void initState() {
     ItemCubit.get(context);
@@ -49,15 +50,18 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
                       suffixIcon:  const Icon(
                         Icons.calendar_today_outlined,
                         color: ColorsManager.primary,
-                        size: 20,
+                        size: 20,),
+                    onTap: (){
+                      showDatePicker(
+                      context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2001),
+                        lastDate: DateTime(2100),
+                        initialEntryMode: DatePickerEntryMode.input,
+                          errorFormatText: "Enter a Valid Date",
+                          errorInvalidText: "Date Out of Range",
 
-                      ),
-                        onTap: (){showDatePicker(
-                    context: context,
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime.now(),
-                    lastDate: DateTime.parse('15/6/2100'),
-                    );
+                      );
                       }
                     ),
                   ),
