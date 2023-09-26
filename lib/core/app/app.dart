@@ -3,11 +3,6 @@ import 'package:get/get.dart';
 import 'package:restaurant/core/local_database/cache_data.dart';
 import 'package:restaurant/core/localization/app_localization.dart';
 import 'package:restaurant/core/resources_manager/constants_manager.dart';
-import 'package:restaurant/feature/fund/presentation/views/add_fund_view.dart';
-import 'package:restaurant/feature/fund/presentation/views/deducte_fund_view.dart';
-import 'package:restaurant/feature/product/presentation/views/add_product_view.dart';
-import 'package:restaurant/feature/product/presentation/views/expenses_view.dart';
-import 'package:restaurant/feature/product/presentation/views/purchases_view.dart';
 
 class MyApp extends StatelessWidget {
 
@@ -27,7 +22,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: Locale(CacheData.lang!),
       translations: AppLocalization(),
-      home: const ExpensesView(),
     );
   }
 }
