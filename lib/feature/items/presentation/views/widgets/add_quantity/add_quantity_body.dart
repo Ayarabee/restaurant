@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
+ import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
 import 'package:restaurant/feature/items/presentation/manager/quantity_cubit.dart';
-
-import '../../../../../../core/core_widgets/default_form/default_from.dart';
+ import '../../../../../../core/core_widgets/default_form/default_from.dart';
 import '../../../../../../core/core_widgets/number_picker/default_number_picker.dart';
 import '../../../../../../core/resources_manager/colors_manager.dart';
+import '../../../funcation/date_box.dart';
 
 class AddQuantityBody extends StatefulWidget {
   const AddQuantityBody({super.key});
@@ -23,21 +23,21 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
     ItemCubit.get(context);
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-      TextEditingController receiver =TextEditingController(text: 'محمد');
-      TextEditingController date=TextEditingController(text: '15/10/2024') ;
-      TextEditingController export =TextEditingController(text: '15');
-      TextEditingController import=TextEditingController(text: '6') ;
-      TextEditingController note =TextEditingController(text: ' ');
+    TextEditingController receiver = TextEditingController(text: 'محمد');
+    TextEditingController date = TextEditingController(text: '');
+    TextEditingController export = TextEditingController(text: '15');
+    TextEditingController import = TextEditingController(text: '6');
+    TextEditingController note = TextEditingController(text: ' ');
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal: 140.0,
+        horizontal: 140.0,
         vertical: 20,
-
       ),
-      child: BlocConsumer<QuantityCubit,QuantityState>(
-        listener: (BuildContext context, QuantityState state) {  },
+      child: BlocConsumer<QuantityCubit, QuantityState>(
+        listener: (BuildContext context, QuantityState state) {},
         builder: (BuildContext context, QuantityState state) {
           return Column(
             children: [
@@ -45,24 +45,20 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
                 children: [
                   Expanded(
                     child: DefaultForm(
-                      controller: date,
-                      text: 'التاريخ',
-                      suffixIcon:  const Icon(
-                        Icons.calendar_today_outlined,
-                        color: ColorsManager.primary,
-                        size: 20,),
-                    onTap: (){
-                      showDatePicker(
-                      context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime(2001),
-                        lastDate: DateTime(2100),
-                        initialEntryMode: DatePickerEntryMode.input,
-                          errorFormatText: "Enter a Valid Date",
-                          errorInvalidText: "Date Out of Range",
-
-                      );
-                      }
+                        readOnly: true,
+                        controller: date,
+                        textInputType: TextInputType.datetime,
+                        text: 'التاريخ',
+                        suffixIcon: const Icon(
+                          Icons.calendar_today_outlined,
+                          color: ColorsManager.primary,
+                          size: 20,),
+                        onTap: () {
+                          showDateBox(
+                            context: context,
+                            controller: date,
+                          );
+                        }
                     ),
                   ),
                   const SizedBox(width: 15,),
@@ -82,16 +78,14 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
                       controller: import,
                       text: 'الوارد',
                       suffixIcon: DefaultNumberPicker(
-                        onAdd:  ()
-                        {
+                        onAdd: () {
                           // ItemCubit.onAddMinusQuantity(
                           //     add: true,
                           //     value: import.text.toString(),
                           //     controller:import
                           // );
                         },
-                        onMinus:  ()
-                        {
+                        onMinus: () {
                           // cubit.onAddMinusQuantity(
                           //     add: false,
                           //     value: import.text.toString(),
@@ -108,16 +102,14 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
                       controller: export,
                       text: 'الخارج',
                       suffixIcon: DefaultNumberPicker(
-                        onAdd:  ()
-                        {
+                        onAdd: () {
                           // ItemCubit.onAddMinusQuantity(
                           //     add: true,
                           //     value: export.text.toString(),
                           //     controller:export
                           // );
                         },
-                        onMinus:  ()
-                        {
+                        onMinus: () {
                           // ItemCubit.onAddMinusQuantity(
                           //     add: false,
                           //     value: export.text.toString(),

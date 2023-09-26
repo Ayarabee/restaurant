@@ -6,6 +6,7 @@ import 'package:restaurant/feature/items/data/item_model.dart';
 import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
 
 import '../../../../../../core/core_widgets/number_picker/default_number_picker.dart';
+import '../../../funcation/date_box.dart';
 
 class MainColumItemBody extends StatefulWidget {
   const MainColumItemBody({
@@ -141,6 +142,12 @@ class _MainColumItemBodyState extends State<MainColumItemBody> {
                     color: ColorsManager.primary,
                     size: 20,
                   ),
+                onTap: () {
+                showDateBox(
+                  context: context,
+                  controller: cubit.exDate,
+                  );
+                  }
                 ),
                 const SizedBox(height: 10,),
                 DefaultForm(
