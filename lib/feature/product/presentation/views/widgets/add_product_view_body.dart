@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:restaurant/core/core_widgets/default_body/default_body.dart';
 import 'package:restaurant/core/core_widgets/default_buttons/default_button_manager.dart';
 
-import 'add_fund_body_items.dart';
+import 'product_body_items.dart';
 
-class AddFundsViewBody extends StatelessWidget {
-  const AddFundsViewBody({super.key, required this.title});
-final String title;
+class AddProductViewBody extends StatelessWidget {
+  const AddProductViewBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DefaultBody(
-      title: title,
+      title: "إضافة منتج",
       sideBarEmptyButton: DefaultButtonManager(text: 'إضافة', onTab: () { }),
       sideBarFilledButton:DefaultButtonManager(text: 'حفظ', onTab: () { }),
-      body:const AddFundBodyItems(),
+      body: const ProductBodyItems(),
     );
   }
 }
