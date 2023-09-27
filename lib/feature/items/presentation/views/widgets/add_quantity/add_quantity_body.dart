@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
- import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
 import 'package:restaurant/feature/items/presentation/manager/quantity_cubit.dart';
  import '../../../../../../core/core_widgets/default_form/default_from.dart';
 import '../../../../../../core/core_widgets/number_picker/default_number_picker.dart';
@@ -8,7 +7,12 @@ import '../../../../../../core/resources_manager/colors_manager.dart';
 import '../../../funcation/date_box.dart';
 
 class AddQuantityBody extends StatefulWidget {
-  const AddQuantityBody({super.key});
+  const AddQuantityBody({
+    super.key,
+    this.quantityCubit}
+      );
+  final QuantityCubit? quantityCubit;
+
 
   @override
   State<AddQuantityBody> createState() => _AddQuantityBodyState();
@@ -20,7 +24,7 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
 
   @override
   void initState() {
-    ItemCubit.get(context);
+    QuantityCubit.get(context);
     super.initState();
   }
 
@@ -39,6 +43,7 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
       child: BlocConsumer<QuantityCubit, QuantityState>(
         listener: (BuildContext context, QuantityState state) {},
         builder: (BuildContext context, QuantityState state) {
+          var qcubit = QuantityCubit.get(context);
           return Column(
             children: [
               Row(
@@ -79,18 +84,18 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
                       text: 'الوارد',
                       suffixIcon: DefaultNumberPicker(
                         onAdd: () {
-                          // ItemCubit.onAddMinusQuantity(
-                          //     add: true,
-                          //     value: import.text.toString(),
-                          //     controller:import
-                          // );
+                          qcubit.onAddMinusQuantity(
+                              controller: import,
+                              value: import.text.toString(),
+                              add: true
+                          ) ;
                         },
                         onMinus: () {
-                          // cubit.onAddMinusQuantity(
-                          //     add: false,
-                          //     value: import.text.toString(),
-                          //     controller: import
-                          // );
+                          qcubit.onAddMinusQuantity(
+                          controller: import,
+                          value: import.text.toString(),
+                          add: false
+                          ) ;
                         },
                       ),
                       suffixPadding: 0,
@@ -103,18 +108,18 @@ class _AddQuantityBodyState extends State<AddQuantityBody> {
                       text: 'الخارج',
                       suffixIcon: DefaultNumberPicker(
                         onAdd: () {
-                          // ItemCubit.onAddMinusQuantity(
-                          //     add: true,
-                          //     value: export.text.toString(),
-                          //     controller:export
-                          // );
+                          qcubit.onAddMinusQuantity(
+                              controller: export,
+                              value: export.text.toString(),
+                              add: true
+                          ) ;
                         },
                         onMinus: () {
-                          // ItemCubit.onAddMinusQuantity(
-                          //     add: false,
-                          //     value: export.text.toString(),
-                          //     controller:export
-                          // );
+                          qcubit.onAddMinusQuantity(
+                              controller: export,
+                              value: export.text.toString(),
+                              add: false
+                          ) ;
                         },
                       ),
                       suffixPadding: 0,

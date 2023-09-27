@@ -87,7 +87,7 @@ class _MainColumItemBodyState extends State<MainColumItemBody> {
                         suffixIcon: DefaultNumberPicker(
                           onAdd:  ()
                           {
-                            cubit.onAddMinusQuantity(
+                            cubit.onAddMinusItem(
                                 add: true,
                                 value: cubit.quant.text.toString(),
                                 controller: cubit.quant
@@ -95,7 +95,7 @@ class _MainColumItemBodyState extends State<MainColumItemBody> {
                           },
                           onMinus:  ()
                           {
-                            cubit.onAddMinusQuantity(
+                            cubit.onAddMinusItem(
                                 add: false,
                                 value: cubit.quant.text.toString(),
                                 controller: cubit.quant
@@ -113,7 +113,7 @@ class _MainColumItemBodyState extends State<MainColumItemBody> {
                         suffixIcon: DefaultNumberPicker(
                           onAdd:  ()
                           {
-                            cubit.onAddMinusQuantity(
+                            cubit.onAddMinusItem(
                                 add: true,
                                 value: cubit.quantLimit.text.toString(),
                               controller: cubit.quantLimit
@@ -121,7 +121,7 @@ class _MainColumItemBodyState extends State<MainColumItemBody> {
                           },
                           onMinus:  ()
                           {
-                            cubit.onAddMinusQuantity(
+                            cubit.onAddMinusItem(
                                 add: false,
                                 value: cubit.quantLimit.text.toString(),
                                 controller: cubit.quantLimit
