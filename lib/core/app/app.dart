@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
         locale: Locale(CacheData.lang!),
         translations: AppLocalization(),
         // home: const AddQuantityView()
-        //home: const ItemDetailsView()
-        home: const ItemsView()
+        home: const ItemDetailsView()
+        //home: const ItemsView()
       ),
     );
   }

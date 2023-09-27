@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:restaurant/feature/items/presentation/views/edit_item_view.dart';
+import 'package:restaurant/feature/items/presentation/views/item_details_view.dart';
 
 import '../../../../../../core/resources_manager/assets_manager.dart';
 
 class IconRow extends StatelessWidget {
-  const IconRow({super.key});
+  const IconRow({super.key,});
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+     return  Row(
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -16,6 +20,10 @@ class IconRow extends StatelessWidget {
             horizontal: 25,
           ),
           child: InkWell(
+            onTap: (){
+              Get.to(()=> const ItemDetailsView());
+            },
+
             child: SvgPicture.asset(
               AssetsManager.more,
               width: 12,
@@ -29,6 +37,9 @@ class IconRow extends StatelessWidget {
              horizontal: 40,
            ),
            child: InkWell(
+             onTap: (){
+               Get.to(()=> const EditItemView());
+             },
             child: SvgPicture.asset(
               AssetsManager.edit,
               width: 12,
@@ -43,6 +54,9 @@ class IconRow extends StatelessWidget {
              right: 25,
            ),
            child: InkWell(
+             onTap: (){
+
+             },
             child: SvgPicture.asset(
               AssetsManager.delete,
               width: 16,
