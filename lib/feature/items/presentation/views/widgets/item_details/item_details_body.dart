@@ -1,3 +1,4 @@
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant/core/resources_manager/colors_manager.dart';
 import 'package:restaurant/core/resources_manager/style_manager.dart';
@@ -7,176 +8,38 @@ class ItemDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return    Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: 10.0,
-        vertical: 20,
-      ),
-      child: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0,
-            ),
-            child: Row(
-              children: [
-                Text(
-                  'التاريخ',
-                  style: StyleManager.textStyleDark18,
-                ),
-                Spacer(),
-                Text(
-                  'الوارد',
-                  style: StyleManager.textStyleDark18,
-                ),
-                Spacer(),
-                Text(
-                  'الخارج',
-                  style: StyleManager.textStyleDark18,
-                ),
-                Spacer(),
-                Text(
-                  'الرصيد',
-                  style: StyleManager.textStyleDark18,
-                ),
-                Spacer(),
-                Text(
-                  'المستلم',
-                  style: StyleManager.textStyleDark18,
-                ),
-                Spacer(),
-                Text(
-                  'الملاحظات',
-                  style: StyleManager.textStyleDark18,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 15,),
-          Padding(
-            padding: const EdgeInsets.only(top: 12.0,left: 18.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: ColorsManager.primaryLight2,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              padding:const EdgeInsets.only(
-                  top: 5.0,
-                bottom: 5.0,
-                right: 5,
-                left: 30
-              ),
-              child:   Row(
-                children: [
-                  Text(
-                    '15/10/2024',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal,
-                        color: ColorsManager.primary
-                    ),
-                  ),
-                  const SizedBox(width: 90,),
-                  Text(
-                    '7',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal
-                    ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    '0',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal
-                    ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    '22',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal
-                    ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    'محمد',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal,
-                      color: ColorsManager.primary
-                    ),
-                  ),
-                  const SizedBox(width: 130,),
-                  Text(
-                    'لا',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 12.0,left: 18.0),
-            child: Container(
-              decoration: BoxDecoration(
-                 borderRadius: BorderRadius.circular(5),
-              ),
-              padding:const EdgeInsets.only(
-                  top: 5.0,
-                bottom: 5.0,
-                right: 5,
-                left: 30
-              ),
-              child:   Row(
-                children: [
-                  Text(
-                    '15/10/2024',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal,
-                        color: ColorsManager.primary
-                    ),
-                  ),
-                  const SizedBox(width: 90,),
-                  Text(
-                    '7',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal
-                    ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    '0',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal
-                    ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    '22',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal
-                    ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    'محمد',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal,
-                      color: ColorsManager.primary
-                    ),
-                  ),
-                  const SizedBox(width: 130,),
-                  Text(
-                    'لا',
-                    style: StyleManager.textStyleDark14.copyWith(
-                      fontWeight: FontWeight.normal
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          ],
-      ),
+    return DataTable2(
+        // columnSpacing: 12,
+        // horizontalMargin: 12,
+        //minWidth: 600,
+         columns: const [
+           DataColumn(label: Center(child: Text('التاريخ')),),
+          DataColumn(label: Center(child: Text('الوارد')),),
+          DataColumn(label: Center(child: Text('الخارج')),),
+          DataColumn(label: Center(child: Text('الرصيد')),),
+          DataColumn(label: Center(child: Text('المستلم')),),
+          DataColumn(label: Center(child: Text('الملاحظات')),),
+        ],
+        rows: [
+          DataRow(
+            color: MaterialStateColor.resolveWith((states) => ColorsManager.primaryLight2),
+               cells: const [
+          DataCell(Center(child: Text("15/10/2024"))),
+          DataCell(Center(child: Text("7"))),
+          DataCell(Center(child: Text("0"))),
+          DataCell(Center(child: Text("22"))),
+          DataCell(Center(child: Text("محمد"))),
+          DataCell(Center(child: Text("لا"))),
+        ]),
+          const DataRow(
+               cells: [
+                DataCell(Center(child: Text("15/10/2024"))),
+                DataCell(Center(child: Text("7"))),
+                DataCell(Center(child: Text("0"))),
+                DataCell(Center(child: Text("22"))),
+                DataCell(Center(child: Text("محمد"))),
+                DataCell(Center(child: Text("لا"))),
+              ])]
     );
   }
 }

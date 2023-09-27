@@ -7,6 +7,10 @@ import 'package:restaurant/core/resources_manager/constants_manager.dart';
 import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
 import 'package:restaurant/feature/items/presentation/manager/quantity_cubit.dart';
 
+import '../../feature/items/presentation/views/add_quantity_view.dart';
+import '../../feature/items/presentation/views/item_details_view.dart';
+import '../../feature/items/presentation/views/items_view.dart';
+
 
 class MyApp extends StatelessWidget {
 
@@ -31,9 +35,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         locale: Locale(CacheData.lang!),
         translations: AppLocalization(),
-        //home: const AddQuantityView()
+        // home: const AddQuantityView()
         //home: const ItemDetailsView()
-        //home: const ItemsView()
+        home: const ItemsView()
       ),
     );
   }
