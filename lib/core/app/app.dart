@@ -8,6 +8,7 @@ import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
 import 'package:restaurant/feature/items/presentation/manager/quantity_cubit.dart';
 
 
+
 class MyApp extends StatelessWidget {
 
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         locale: Locale(CacheData.lang!),
         translations: AppLocalization(),
-        //home: const AddQuantityView()
+        // home: const AddQuantityView()
         //home: const ItemDetailsView()
         //home: const ItemsView()
       ),

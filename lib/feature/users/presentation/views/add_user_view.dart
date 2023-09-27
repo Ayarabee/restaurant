@@ -65,7 +65,7 @@ class AddUserView extends StatelessWidget {
                   const SizedBox(
                     height: 8,
                   ),
-                  DefaultLabel(
+                  const DefaultLabel(
                     text: 'الصلاحيات',
                   ),
                   const SizedBox(

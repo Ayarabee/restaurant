@@ -5,7 +5,7 @@ import 'package:restaurant/core/resources_manager/size_manager.dart';
 import 'default_label.dart';
 
 class DefaultForm extends StatelessWidget {
-   DefaultForm({
+   const DefaultForm({
     super.key,
     required this.text,
     this.enabled = true,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'build_drop_down_row.dart';
 import 'shared_container.dart';
-import 'shared_order_row.dart';
 import 'total_orders_drop_down.dart';
 
 class TotalItemsAmount extends StatelessWidget {
