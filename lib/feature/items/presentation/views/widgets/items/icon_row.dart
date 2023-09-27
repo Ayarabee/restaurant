@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:restaurant/feature/items/presentation/views/edit_item_view.dart';
 import 'package:restaurant/feature/items/presentation/views/item_details_view.dart';
 

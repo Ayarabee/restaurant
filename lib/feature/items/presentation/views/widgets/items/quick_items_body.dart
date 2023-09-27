@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:restaurant/core/resources_manager/assets_manager.dart';
 import 'package:restaurant/core/resources_manager/colors_manager.dart';
-import 'package:restaurant/core/resources_manager/style_manager.dart';
 import 'package:restaurant/feature/items/presentation/views/widgets/items/icon_row.dart';
 import 'package:restaurant/feature/items/presentation/views/widgets/items/quantity_row.dart';
 

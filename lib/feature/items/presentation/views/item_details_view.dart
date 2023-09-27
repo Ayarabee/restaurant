@@ -5,7 +5,6 @@ import 'package:restaurant/core/core_widgets/default_buttons/default_button_mana
 import 'package:restaurant/feature/items/presentation/views/add_quantity_view.dart';
 import 'package:restaurant/feature/items/presentation/views/widgets/add_quantity/side_quantity_body.dart';
 import 'package:restaurant/feature/items/presentation/views/widgets/item_details/item_details_body.dart';
- import 'package:restaurant/feature/items/presentation/views/widgets/item_details/item_details_list_view.dart';
 
 class ItemDetailsView extends StatelessWidget {
   const ItemDetailsView({super.key});

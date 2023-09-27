@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../../core/resources_manager/colors_manager.dart';
 import '../../../../../../core/resources_manager/style_manager.dart';
-import 'orange_rectangle_row.dart';
 
 class QuantityRow extends StatelessWidget {
   const QuantityRow({super.key});

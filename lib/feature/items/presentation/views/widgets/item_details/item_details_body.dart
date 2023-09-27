@@ -1,8 +1,4 @@
-import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
-import 'package:restaurant/core/resources_manager/colors_manager.dart';
-import 'package:restaurant/core/resources_manager/style_manager.dart';
-import 'package:restaurant/feature/items/presentation/views/widgets/item_details/details_row.dart';
 import 'package:restaurant/feature/items/presentation/views/widgets/item_details/title_row.dart';
 
 import 'item_details_list_view.dart';
