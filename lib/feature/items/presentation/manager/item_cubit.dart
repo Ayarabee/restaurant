@@ -37,7 +37,7 @@ class ItemCubit extends Cubit<ItemState> {
     quantLimit = TextEditingController(text: isEdit?itemModel!.quantLimit.toString():'1');
   }
 
-  void onAddMinusQuantity ({required controller, required String value, required bool add})
+  void onAddMinusItem ({required controller, required String value, required bool add})
   {
     controller.text = ConstantsManager.onAddMinus(value: value, add: add).toString();
     emit(ItemAddMinusIncrement());

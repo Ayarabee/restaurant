@@ -13,7 +13,9 @@ class DefaultForm extends StatelessWidget {
     this.suffixIcon,
     this.textInputType = TextInputType.text,
     this.isPassword = false,
+    this.readOnly = false,
     this.onChange,
+    this.onTap,
     this.validator,
     this.maxLines = 1,
     this.suffixPadding = 5.0,
@@ -22,11 +24,13 @@ class DefaultForm extends StatelessWidget {
 
   final int maxLines;
   final bool enabled;
+  final bool readOnly;
   final bool? isPassword;
   final TextEditingController controller;
   final Widget? suffixIcon;
   final TextInputType textInputType;
   final void Function(String)? onChange;
+  final void Function()? onTap;
   final String? Function(String?)? validator;
   final String text;
   final double suffixPadding;
@@ -47,12 +51,14 @@ class DefaultForm extends StatelessWidget {
           height: SizeManager.labelFormDivider,
         ),
         DefaultFormField(
+          readOnly: readOnly,
           hintText: hintText,
           suffixPadding: suffixPadding,
           controller: controller,
           enabled: enabled,
           isFillWhite: isFillWhite,
           onChange: onChange,
+          onTap: onTap,
           isPassword: isPassword,
           suffixIcon: suffixIcon,
           textInputType: textInputType,
