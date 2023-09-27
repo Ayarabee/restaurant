@@ -1,11 +1,15 @@
 
 import 'package:flutter/material.dart';
 
-class DailyExpensesView extends StatelessWidget {
-  const DailyExpensesView({super.key});
+import 'widgets/expenses_view_body.dart';
+
+class ExpensesView extends StatelessWidget {
+  const ExpensesView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+        body: ExpensesViewBody(),
+    );
   }
 }

@@ -97,7 +97,6 @@ class DefaultBody extends StatelessWidget {
               ),
             ),
           ),
-
           // body
           Expanded(
             flex: 6,

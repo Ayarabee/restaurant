@@ -5,7 +5,7 @@ import 'package:restaurant/core/resources_manager/size_manager.dart';
 import 'default_label.dart';
 
 class DefaultForm extends StatelessWidget {
-  const DefaultForm({
+   DefaultForm({
     super.key,
     required this.text,
     this.enabled = true,
@@ -19,7 +19,7 @@ class DefaultForm extends StatelessWidget {
     this.validator,
     this.maxLines = 1,
     this.suffixPadding = 5.0,
-    this.hintText,
+    this.hintText, this.isFillWhite=false,
    });
 
   final int maxLines;
@@ -35,6 +35,7 @@ class DefaultForm extends StatelessWidget {
   final String text;
   final double suffixPadding;
   final String? hintText;
+   final bool? isFillWhite;
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +56,7 @@ class DefaultForm extends StatelessWidget {
           suffixPadding: suffixPadding,
           controller: controller,
           enabled: enabled,
+          isFillWhite: isFillWhite,
           onChange: onChange,
           onTap: onTap,
           isPassword: isPassword,
