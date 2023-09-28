@@ -8,10 +8,16 @@ class DefaultFilledButton extends StatefulWidget {
     super.key,
     required this.onPressed,
     required this.text,
+    this.isSmall = false ,
+    this.fillColor = ColorsManager.primary ,
+    this.textColor = ColorsManager.white ,
   });
 
   final void Function() onPressed;
   final String text;
+  final bool isSmall;
+  final Color fillColor;
+  final Color textColor ;
 
   @override
   State<DefaultFilledButton> createState() => _DefaultFilledButtonState();
@@ -38,7 +44,7 @@ class _DefaultFilledButtonState extends State<DefaultFilledButton> {
         },
         child: MaterialButton(
           onPressed: widget.onPressed,
-          color: ColorsManager.primary,
+          color: widget.fillColor,
           hoverColor: ColorsManager.white,
           shape: OutlineInputBorder(
               borderRadius: BorderManager.radius5,
@@ -47,7 +53,7 @@ class _DefaultFilledButtonState extends State<DefaultFilledButton> {
             widget.text,
             style: tapped
                 ? StyleManager.textStyleLight18.copyWith(color: ColorsManager.primary)
-                : StyleManager.textStyleLight18,
+                : widget.isSmall ? StyleManager.textStyleLight18.copyWith(color: widget.textColor, fontSize: 14): StyleManager.textStyleLight18.copyWith(color: widget.textColor),
           ),
         ),
       ),

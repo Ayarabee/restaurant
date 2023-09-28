@@ -5,6 +5,7 @@ abstract class BorderManager {
   static BorderRadius radius5 = BorderRadius.circular(5.0);
   static BorderRadius radius10 = BorderRadius.circular(10.0);
   static BorderRadius radius15 = BorderRadius.circular(15.0);
+  static BorderRadius radius40 = BorderRadius.circular(40.0);
   static BorderRadiusDirectional sideBar = const BorderRadiusDirectional.only(
     topEnd: Radius.circular(15.0),
     bottomEnd: Radius.circular(15.0),
@@ -35,5 +36,5 @@ abstract class PaddingManager {
       EdgeInsets.symmetric(horizontal: 23, vertical: 28);
   static const EdgeInsetsGeometry navBarPadding = EdgeInsets.all(15);
   static const EdgeInsetsGeometry sideBar =
-      EdgeInsets.symmetric(horizontal: 15, vertical: 20);
+      EdgeInsets.symmetric(horizontal: 15, vertical: 10);
 }
