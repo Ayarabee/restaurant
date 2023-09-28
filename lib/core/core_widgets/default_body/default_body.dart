@@ -37,7 +37,7 @@ class DefaultBody extends StatelessWidget {
         children: [
           // side bar
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Container(
               padding: PaddingManager.sideBar,
               // width: MediaQuery.of(context).size.width*0.271,
@@ -99,7 +99,7 @@ class DefaultBody extends StatelessWidget {
           ),
           // body
           Expanded(
-            flex: 6,
+            flex: 7,
             child: Container(
               color: ColorsManager.white,
               child: Column(

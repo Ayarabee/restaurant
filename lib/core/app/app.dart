@@ -4,10 +4,8 @@ import 'package:get/get.dart';
 import 'package:restaurant/core/local_database/cache_data.dart';
 import 'package:restaurant/core/localization/app_localization.dart';
 import 'package:restaurant/core/resources_manager/constants_manager.dart';
-import 'package:restaurant/feature/items/presentation/manager/item_cubit.dart';
-import 'package:restaurant/feature/items/presentation/manager/quantity_cubit.dart';
-
-
+import 'package:restaurant/feature/cashier/presentation/cubit/cashier_cubit.dart';
+import 'package:restaurant/feature/cashier/presentation/views/cashier_view.dart';
 
 class MyApp extends StatelessWidget {
 
@@ -20,9 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create : (context) =>ItemCubit()),
-        BlocProvider(create : (context) =>QuantityCubit()),
+      providers:
+      [
+        BlocProvider(create: (context) => CashierCubit())
       ],
       child: GetMaterialApp(
         title: ConstantsManager.appTitle,
@@ -32,9 +30,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         locale: Locale(CacheData.lang!),
         translations: AppLocalization(),
-        // home: const AddQuantityView()
-        //home: const ItemDetailsView()
-        //home: const ItemsView()
       ),
     );
   }
