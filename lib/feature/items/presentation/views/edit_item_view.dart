@@ -7,8 +7,8 @@ import '../../../../core/core_widgets/default_buttons/default_button_manager.dar
 import '../../../../core/core_widgets/image_widget/image_view.dart';
 
 class EditItemView extends StatelessWidget {
-  const EditItemView({super.key, required this.itemModel});
-  final ItemModel itemModel;
+  const EditItemView({super.key,   this.itemModel});
+  final ItemModel? itemModel;
 
   @override
   Widget build(BuildContext context) {

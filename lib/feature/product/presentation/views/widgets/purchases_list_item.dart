@@ -1,7 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:restaurant/core/resources_manager/colors_manager.dart';
-import 'package:restaurant/core/resources_manager/size_manager.dart';
 import 'package:restaurant/core/resources_manager/style_manager.dart';
 import 'package:restaurant/feature/product/data/models/items_table_model.dart';
 
