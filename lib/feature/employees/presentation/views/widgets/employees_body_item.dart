@@ -9,7 +9,7 @@ class EmployeesBodyItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
       itemBuilder: (context,index)=>const Row(
         children: [
           Expanded(child: EmployeesListItem()),

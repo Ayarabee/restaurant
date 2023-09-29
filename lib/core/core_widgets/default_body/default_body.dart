@@ -17,6 +17,7 @@ class DefaultBody extends StatelessWidget {
     this.sideBarFilledButton,
     this.sideBarEmptyButton,
     this.titleDivider = true,
+    this.showNavBar = true,
     this.sideBarTitleToDivider = SizeManager.sideBarTitleToDivider,
     this.buttonsDividerVPadding = 10,
   });
@@ -24,6 +25,7 @@ class DefaultBody extends StatelessWidget {
   final Widget? sideBarBody;
   final String? title;
   final bool titleDivider;
+  final bool showNavBar;
   final Widget body;
   final double sideBarTitleToDivider;
   final double buttonsDividerVPadding;
@@ -32,88 +34,96 @@ class DefaultBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Row(
-        children: [
-          // side bar
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: PaddingManager.sideBar,
-              // width: MediaQuery.of(context).size.width*0.271,
-              //height: double.infinity,
-              decoration: BoxDecoration(
-                  color: ColorsManager.secondary,
-                  borderRadius: BorderManager.sideBar),
-              child: Column(
-                children: [
-                  if (title != null)
-                    Column(
-                      children: [
-                        Text(
-                          title!,
-                          style: StyleManager.textStyle20.copyWith(
-                            fontWeight: FontWeight.bold
-                          ),
-                          textAlign: TextAlign.center,
-
-                        ),
-                        if (titleDivider)
-                          Column(
-                            children: [
-                              SizedBox(
-                                height: sideBarTitleToDivider,
-                              ),
-                              const DefaultDivider()
-                            ],
-                          ),
-                      ],
-                    ),
-                  if (sideBarBody == null) const Spacer(),
-                  if (sideBarBody != null) Expanded(child: sideBarBody!),
-                  Column(
+    return Builder(
+      builder: (context) {
+        if(MediaQuery.of(context).size.width<900)
+        {
+          return Scaffold(body: Center(child: Text('Mobile UI not finished yet'),),);
+        }
+        return SafeArea(
+          child: Row(
+            children: [
+              // side bar
+              Expanded(
+                flex: 3,
+                child: Container(
+                  padding: PaddingManager.sideBar,
+                  // width: MediaQuery.of(context).size.width*0.271,
+                  //height: double.infinity,
+                  decoration: BoxDecoration(
+                      color: ColorsManager.secondary,
+                      borderRadius: BorderManager.sideBar),
+                  child: Column(
                     children: [
-                      if (sideBarEmptyButton == null &&
-                          sideBarFilledButton != null)
-                        const DefaultDivider(),
-                      if (sideBarFilledButton != null)
-                        DefaultFilledButton(
-                            onPressed: sideBarFilledButton!.onTab,
-                            text: sideBarFilledButton!.text),
-                      if (sideBarFilledButton != null &&
-                          sideBarEmptyButton != null)
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: buttonsDividerVPadding),
-                          child: const DefaultDivider(),
+                      if (title != null)
+                        Column(
+                          children: [
+                            Text(
+                              title!,
+                              style: StyleManager.textStyle20.copyWith(
+                                fontWeight: FontWeight.bold
+                              ),
+                              textAlign: TextAlign.center,
+
+                            ),
+                            if (titleDivider)
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: sideBarTitleToDivider,
+                                  ),
+                                  const DefaultDivider()
+                                ],
+                              ),
+                          ],
                         ),
-                      if (sideBarEmptyButton != null)
-                        DefaultEmptyButton(
-                            onPressed: sideBarEmptyButton!.onTab,
-                            text: sideBarEmptyButton!.text),
+                      if (sideBarBody == null) const Spacer(),
+                      if (sideBarBody != null) Expanded(child: sideBarBody!),
+                      Column(
+                        children: [
+                          if (sideBarEmptyButton == null &&
+                              sideBarFilledButton != null)
+                            const DefaultDivider(),
+                          if (sideBarFilledButton != null)
+                            DefaultFilledButton(
+                                onPressed: sideBarFilledButton!.onTab,
+                                text: sideBarFilledButton!.text),
+                          if (sideBarFilledButton != null &&
+                              sideBarEmptyButton != null)
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: buttonsDividerVPadding),
+                              child: const DefaultDivider(),
+                            ),
+                          if (sideBarEmptyButton != null)
+                            DefaultEmptyButton(
+                                onPressed: sideBarEmptyButton!.onTab,
+                                text: sideBarEmptyButton!.text),
+                        ],
+                      )
                     ],
-                  )
-                ],
-              ),
-            ),
-          ),
-          // body
-          Expanded(
-            flex: 7,
-            child: Container(
-              color: ColorsManager.white,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: body,
                   ),
-                  const DefaultNavBar()
-                ],
+                ),
               ),
-            ),
+              // body
+              Expanded(
+                flex: 7,
+                child: Container(
+                  color: ColorsManager.white,
+                  child: Column(
+                    // alignment: Alignment.bottomCenter,
+                    children: [
+                      Expanded(child: body),
+                      if(showNavBar)
+                      const DefaultNavBar()
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      }
     );
   }
 }

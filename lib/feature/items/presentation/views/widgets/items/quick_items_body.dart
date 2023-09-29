@@ -14,7 +14,7 @@ class QuickItemsBody extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(
-              horizontal: 32.0,
+              horizontal: 10.0,
             vertical: 10,
           ),
           child: Container(

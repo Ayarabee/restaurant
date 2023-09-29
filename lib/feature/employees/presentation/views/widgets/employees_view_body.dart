@@ -10,6 +10,7 @@ class EmployeesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultBody(
+      showNavBar: false,
       title: "قائمة العمال",
       sideBarEmptyButton: DefaultButtonManager(text: 'إضافة', onTab: () { }),
       sideBarFilledButton:DefaultButtonManager(text: 'حفظ', onTab: () { }),

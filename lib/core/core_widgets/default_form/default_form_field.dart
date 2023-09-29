@@ -50,7 +50,7 @@ class DefaultFormField extends StatelessWidget {
       controller: controller,
       onChanged: onChange,
       maxLines: maxLines,
-      style: StyleManager.textStyleDark14.copyWith(
+      style: StyleManager.textStyleDark20.copyWith(
         fontWeight: FontWeight.normal,
       ),
       obscureText: isPassword!,

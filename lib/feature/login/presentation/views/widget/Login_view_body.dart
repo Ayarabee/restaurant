@@ -3,6 +3,8 @@ import 'package:restaurant/core/core_widgets/default_buttons/default_filled_butt
 import 'package:restaurant/core/core_widgets/default_form/default_form_field.dart';
 import 'package:restaurant/core/resources_manager/colors_manager.dart';
 import 'package:restaurant/core/resources_manager/style_manager.dart';
+import 'package:restaurant/feature/home/presentation/cubit/home_cubit.dart';
+import 'package:restaurant/feature/home/presentation/views/home_view.dart';
 
 TextEditingController login = TextEditingController();
 TextEditingController passwordController = TextEditingController();
@@ -86,7 +88,11 @@ class LoginViewBody extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             horizontal: MediaQuery.of(context).size.width * .1),
                         child: DefaultFilledButton(
-                          onPressed: () {},
+                          onPressed: ()
+                          {
+                            HomeCubit.get(context).changeNavBar(0, context);
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeView()));
+                          },
                           text: 'تسجيل دخول',
                         ),
                       ),

@@ -7,26 +7,30 @@ class DefaultNavBar extends StatelessWidget {
   const DefaultNavBar({super.key});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: PaddingManager.fromFieldMargin,
-      child: MediaQuery(
-        data: MediaQuery.of(context).copyWith(
-            textScaleFactor:
-                MediaQuery.of(context).size.width > 700 ? 1 : 0.65),
-        child: Material(
-          elevation: 3,
-          borderRadius: BorderManager.radius15,
-          child: Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 15.0,
-              vertical: 10,
+    return SizedBox(
+     // height: 90,
+      child: Padding(
+        padding: PaddingManager.fromFieldMargin,
+        child: MediaQuery(
+          data: MediaQuery.of(context).copyWith(
+              textScaleFactor:
+                  MediaQuery.of(context).size.width > 700 ? 1 : 0.65),
+          child: Material(
+            color: Colors.transparent,
+            elevation: 3,
+            borderRadius: BorderManager.radius15,
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15.0,
+                vertical: 10,
+              ),
+              // padding: PaddingManager.navBarPadding,
+              decoration: BoxDecoration(
+                color: ColorsManager.secondary,
+                borderRadius: BorderManager.radius15,
+              ),
+              child: const DefaultNavBarList(),
             ),
-            // padding: PaddingManager.navBarPadding,
-            decoration: BoxDecoration(
-              color: ColorsManager.secondary,
-              borderRadius: BorderManager.radius15,
-            ),
-            child: const DefaultNavBarList(),
           ),
         ),
       ),
