@@ -31,10 +31,6 @@ class OrderModel
 
   set area(AreaModel area)
   {
-    if(_area != null)
-    {
-      _net -= _area!.price;
-    }
     _area = area;
     setTotal();
   }
