@@ -81,7 +81,10 @@ class OrderItemBuilder extends StatelessWidget {
                             [
 
                               InkWell(
-                                onTap: (){},
+                                onTap: ()
+                                {
+                                  CashierCubit.get(context).changeItemCount(isAdd: true, index: index);
+                                },
                                 child: Container(
                                   padding: EdgeInsets.symmetric(horizontal: 5),
                                     child: Icon(Icons.keyboard_arrow_up))),
@@ -90,7 +93,12 @@ class OrderItemBuilder extends StatelessWidget {
                                 child: Text(itemModel.quantity.toString(),style: StyleManager.textStyle16.copyWith(height: 1.6,color: ColorsManager.black),),
                               ),
                               InkWell(
-                                  onTap: (){},
+                                  onTap: ()
+                                  {
+                                    if(itemModel.quantity >1) {
+                                      CashierCubit.get(context).changeItemCount(isAdd: false, index: index);
+                                    }
+                                  },
                                   child: Container(
                                       padding: EdgeInsets.symmetric(horizontal: 5),
                                       child: Icon(Icons.keyboard_arrow_down))),

@@ -29,6 +29,12 @@ class CashierCubit extends Cubit<CashierState> {
     emit(CashierAddItemToOrder());
   }
 
+  void changeItemCount({required int index, required bool isAdd})
+  {
+    orderModel.changeItemCount(index: index, isAdd: isAdd);
+    emit(CashierChangeItemCountToOrder());
+  }
+
   void removeItemFromOrder(int index)
   {
     orderModel.removeItem(index);

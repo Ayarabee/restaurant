@@ -21,6 +21,38 @@ class OrderModel
     setTotal();
   }
 
+  void changeItemNCount({required int index, required int count})
+  {
+    if(_items[index].quantity < count)
+    {
+      _net += ((count - _items[index].quantity)* _items[index].price);
+    }
+    else if(_items[index].quantity > count)
+    {
+      _net -= ((_items[index].quantity - count)* _items[index].price);
+    }
+    _items[index].quantity = count;
+    setTotal();
+  }
+
+  void changeItemCount({required int index, required bool isAdd})
+  {
+    if(isAdd)
+    {
+      _net += _items[index].price;
+      _items[index].quantity ++;
+    }
+    else
+    {
+      _net -= _items[index].price;
+      _items[index].quantity --;
+    }
+
+    setTotal();
+  }
+
+
+
   void removeItem(int index)
   {
     _net -= _items[index].price;
